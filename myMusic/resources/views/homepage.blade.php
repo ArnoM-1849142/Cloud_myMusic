@@ -206,7 +206,7 @@ $songs = array("lalala", "jodela", "i'm blue");
                 <p class="u-text u-text-body-alt-color u-text-3" id="kanyeQuote"></p>
                 <p class="u-text u-text-body-alt-color u-text-4">~ Kanye West
                 </p>
-                <a href="https://nicepage.app" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-2">read more</a>
+                <a href="https://kanye.rest/" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-2">read more</a>
               </div>
             </div>
           </div>
@@ -215,7 +215,6 @@ $songs = array("lalala", "jodela", "i'm blue");
     </section>
 
     <script class="u-script" type="text/javascript" src="{{asset('assets/kanyeRestApi.js')}}" ></script>
-
 
      <!-- section 6 -->
     <section class="u-clearfix u-palette-1-base u-section-6" id="carousel_070c">
