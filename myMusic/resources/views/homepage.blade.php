@@ -8,10 +8,48 @@ $songs = array("lalala", "jodela", "i'm blue");
  @extends('layouts.website')
 
  @section('section')
+ <img id="soundBtn" src="{{asset('assets/images/soundicon.png')}}" width="35" height="35" style="position: fixed;  z-index: 999; top: 20px;  right: 20px; "/>
+
+ 
+ <h1 id="textboxrequest">textbox for request </h1>
+ <!-- The Modal -->
+<div id="myModal" class="modal">
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <div class="slidecontainer">
+      <div class="center">
+        <p>Volume</p>
+        <input type="range" min="1" max="100" value="50" class="slider"  orient="vertical"  id="volume">
+        <p id="volumeT">100 %</p>
+      </div>
+      <div class="center">
+        <p>treble</p>
+        <input type="range" min="1" max="100" value="50" class="slider" id="treble">
+        <p id="trebleT">100 %</p>
+      </div>
+      <div class="center">
+        <p>mid</p>
+        <input type="range" min="1" max="100" value="50" class="slider" id="mid">
+        <p id="midT">100 %</p>
+      </div>
+      <div class="center">
+      <p>bass</p>
+      <input type="range" min="1" max="100" value="50" class="slider" id="bass">
+      <p id="bassT">100 %</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
+ <link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css') }}" />
+
 
     <!-- section 1 -->  
      <section class="u-align-center u-clearfix u-image u-section-1" id="sec-9b1f" data-image-width="1527" data-image-height="1080">
-      <div class="u-clearfix u-sheet u-sheet-1">
+      <div class="u-clearfix u-sheet u-sheet-1s">
         <img class="u-image u-image-contain u-image-default u-image-1" src="{{asset('assets/images/myMusic.png')}}" alt="" data-image-width="349" data-image-height="302">
         <h1 class="u-custom-font u-font-oswald u-text u-text-body-alt-color u-text-default u-text-1"> Music for everyone</h1>
         <p class="u-text u-text-body-alt-color u-text-2">founders: Molenaers A. &amp; Purnal L.</p>
@@ -163,10 +201,10 @@ $songs = array("lalala", "jodela", "i'm blue");
             </div>
             <div class="u-align-left u-container-style u-layout-cell u-shape-rectangle u-size-30 u-layout-cell-2">
               <div class="u-container-layout u-valign-middle u-container-layout-2">
-                <h2 class="u-custom-font u-font-oswald u-text u-text-default u-text-white u-text-1">Live Music</h2>
-                <h4 class="u-custom-font u-font-montserrat u-text u-text-white u-text-2">Play your favorite</h4>
-                <p class="u-text u-text-body-alt-color u-text-3">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-                <p class="u-text u-text-body-alt-color u-text-4">template header
+                <h2 class="u-custom-font u-font-oswald u-text u-text-default u-text-white u-text-1">Kanye Rest</h2>
+                <h4 class="u-custom-font u-font-montserrat u-text u-text-white u-text-2">Random Kanye qoutes</h4>
+                <p class="u-text u-text-body-alt-color u-text-3" id="kanyeQuote"></p>
+                <p class="u-text u-text-body-alt-color u-text-4">~ Kanye West
                 </p>
                 <a href="https://nicepage.app" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-2">read more</a>
               </div>
@@ -175,6 +213,8 @@ $songs = array("lalala", "jodela", "i'm blue");
         </div>
       </div>
     </section>
+
+    <script class="u-script" type="text/javascript" src="{{asset('assets/kanyeRestApi.js')}}" ></script>
 
 
      <!-- section 6 -->
@@ -306,9 +346,11 @@ $songs = array("lalala", "jodela", "i'm blue");
 @endsection
 
 @section('script')
+<!-- <script class="u-script" type="text/javascript" src="resources/js/soundsettings.js" ></script> 
+ <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
 
 <script class="u-script" type="text/javascript" src="{{asset('assets/jquery.js')}}" defer=""></script>
-<script class="u-script" type="text/javascript" src="{{asset('assets/nicepage.js')}}" defer=""></script>
+<script class="u-script" type="text/javascript" src="{{asset('assets/nicepage.js')}}" defer=""></script>-->
 
 <script type="application/ld+json">{
 		"@context": "http://schema.org",
@@ -318,3 +360,9 @@ $songs = array("lalala", "jodela", "i'm blue");
 }</script>
 
 @endsection
+
+@stack('scripts')  
+@push('scripts')
+
+
+@endpush

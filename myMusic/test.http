@@ -1,0 +1,80 @@
+GET http://127.0.0.1:8000/api/soundsettings HTTP/1.1
+
+
+###
+
+POST http://127.0.0.1:8000/api/soundsettings HTTP/1.1
+
+
+Content-Type: application/json
+
+{
+    "volume": "44",
+    "treble": "22",
+    "mid": "22",
+    "bass": "22"
+}
+
+
+###
+
+PUT http://127.0.0.1:8000/api/songs/1 HTTP/1.1
+
+Content-Type: application/json
+
+{
+   "volume": "44",
+    "treble": "22",
+    "mid": "22",
+    "bass": "22"
+}
+
+###
+
+DELETE http://127.0.0.1:8000/api/soundsettings/6
+
+
+
+
+
+
+
+
+
+
+
+
+
+###
+
+GET http://127.0.0.1:8000/api/songs HTTP/1.1
+
+###
+
+POST http://127.0.0.1:8000/api/songs HTTP/1.1
+
+Content-Type: application/json
+
+{
+    "title": "Anton aus Tirol",
+    "artist": "Anton",
+    "genre": "Après ski",
+}
+
+
+###
+
+PUT http://127.0.0.1:8000/api/songs/1 HTTP/1.1
+
+Content-Type: application/json
+
+{
+    "title": "waterval",
+    "artist": "K3",
+    "genre": "kindermuziek",
+}
+
+
+###
+
+DELETE http://127.0.0.1:8000/api/songs/1
