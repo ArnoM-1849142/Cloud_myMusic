@@ -17,7 +17,7 @@ $songs = array("lalala", "jodela", "i'm blue");
         <p class="u-text u-text-body-alt-color u-text-2">founders: Molenaers A. &amp; Purnal L.</p>
         <div class="u-align-center u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
           <div class="u-container-layout">
-            <a href="{{asset('http://127.0.0.1:8000')}}" class="u-active-palette-3-base u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-base u-palette-1-base u-radius-50 u-btn-1">Start Free Trial</a>
+            <a href="/loginSpotify" class="u-active-palette-3-base u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-base u-palette-1-base u-radius-50 u-btn-1">Start Free Trial</a>
           </div>
         </div>
         <img class="u-expanded-width-sm u-expanded-width-xs u-image u-image-contain u-image-2" src="{{asset('assets/images/dssdsd-min.png')}}" data-image-width="1200" data-image-height="917">

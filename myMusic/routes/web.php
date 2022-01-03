@@ -17,3 +17,7 @@ Route::get('/', function () {
     return view('homepage');
 });
 
+Route::get('/loginSpotify', function (){
+    return view('loginSpotify');
+});
+
