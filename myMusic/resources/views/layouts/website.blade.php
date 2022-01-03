@@ -62,7 +62,7 @@
 
       <!-- content -->
       <div id="content-wrap">
-        @yield('section')
+        @yield('content')
       </div>
       
 

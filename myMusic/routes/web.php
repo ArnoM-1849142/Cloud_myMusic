@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\myMusicController;
+use App\Models\Playlist;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,11 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
-
-Route::get('/loginSpotify', function (){
-    return view('loginSpotify');
-});
-
+Route::resource('/', myMusicController::class);
+Route::get('/loginSpotify', [myMusicController::class, 'loginSpotify']);
+Route::get('/redirectAuthorize', [myMusicController::class, 'redirectAuthorize']);

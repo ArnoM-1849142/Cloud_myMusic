@@ -1,8 +1,6 @@
 @extends('layouts.website')
 
-@section('section')
-
-<script class="u-script" type="text/javascript" src="{{asset('assets/loginSpotify.js')}}" defer=""></script>
+@section('content')
 
 <section class="u-clearfix u-palette-1-base">
     <div class="u-clearfix u-sheet u-sheet-1">
@@ -14,7 +12,7 @@
                     The types of access that are granteed will be listed aswell. Be sure to check these before proceeding.
                     After logging in you will be redirected to the homepage.
                 </p>
-                <a class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1 button">
+                <a href="/redirectAuthorize" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1 button">
                     Log in with spotify
                 </a>
             </div>
