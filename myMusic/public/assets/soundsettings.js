@@ -1,3 +1,4 @@
+var userInfo = null;
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -14,10 +15,10 @@ btn.onclick = function() {
   modal.style.display = "block";
   fetch("http://127.0.0.1:8000/api/soundsettings")
   .then(response => response.json())
-  .then(data => savedata(data));
+  .then(data => setData(data));
 }
 
-function savedata(data){
+function setData(data){
   slidersdata = data;
 
   //set text in volume settings
@@ -57,6 +58,49 @@ var volumeText = document.getElementById("volumeT")
 var trebleText = document.getElementById("trebleT")
 var midText = document.getElementById("midT")
 var bassText = document.getElementById("bassT")
+
+async function saveSoundsettings(){
+  access_token = localStorage.getItem("access_token");
+
+  if (access_token !== null){
+    let userInfo = await getSpotifyUserinfo(access_token);
+    let userID = userInfo.id;
+    console.log(userID);
+
+    data = {
+      volume: bass.value,
+      treble: treble.value,
+      mid: mid.value,
+      bass: bass.value
+    }
+
+    fetch("http://127.0.0.1:8000/api/soundsettings", {
+      method: "POST", 
+      headers: {'Content-Type': 'application/json',},
+      body: JSON.stringify(data)
+    }).then(res => {
+      console.log("Request complete! response:", res);
+    });
+  }
+  else 
+  {
+    alert("you are not logged in, please log in to save your sound settings");
+  }
+  
+}
+
+async function getSpotifyUserinfo(access_token){ 
+  //if userInfo not previously fetched, get from API
+  if (userInfo === null){
+    userInfo = await fetch("https://api.spotify.com/v1/me", {
+    method: "GET", 
+    headers: {'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + access_token},
+    }).then(response => response.json())
+    .then(data => {return data;});
+  }
+  return userInfo;
+}
 
 
 // update textbox for slidervalues

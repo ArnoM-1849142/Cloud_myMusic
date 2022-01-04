@@ -13,28 +13,41 @@ $songs = array("lalala", "jodela", "i'm blue");
 <div id="myModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="slidecontainer">
-      <div class="center">
-        <p class="darktext">Volume</p>
-        <input type="range" min="1" max="100" value="50" class="slider"  orient="vertical"  id="volume">
-        <p class="darktext" id="volumeT">100 %</p>
+    <div>
+      <span class="close">&times;</span>
+      <div class="slidecontainer">
+        <div class="center">
+          <div style="display: flex; align-items: center;">
+            <div class="darktext">Volume: </div>
+            <div class="darktext" id="volumeT">50 %</div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider"  id="volume">
+        </div>
+        <div class="center">
+          <div style="display: flex; align-items: center;">
+            <div class="darktext">treble: </div>
+            <div class="darktext" id="trebleT">50 %</div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider" id="treble">
+        </div>
+        <div class="center">
+          <div style="display: flex; align-items: center;">
+            <div class="darktext">mid: </div>
+            <div class="darktext" id="midT">50 %</div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider" id="mid">
+        </div>
+        <div class="center">
+          <div style="display: flex; align-items: center;">
+            <div class="darktext">bass: </div>
+            <div class="darktext" id="bassT">50 %</div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider" id="bass">
+        </div>
       </div>
-      <div class="center">
-        <p class="darktext">treble</p>
-        <input type="range" min="1" max="100" value="50" class="slider" id="treble">
-        <p class="darktext" id="trebleT">100 %</p>
-      </div>
-      <div class="center">
-        <p class="darktext">mid</p>
-        <input type="range" min="1" max="100" value="50" class="slider" id="mid">
-        <p class="darktext" id="midT">100 %</p>
-      </div>
-      <div class="center">
-      <p class="darktext">bass</p>
-      <input type="range" min="1" max="100" value="50" class="slider" id="bass">
-      <p class="darktext" id="bassT">100 %</p>
-      </div>
+    </div>
+    <div class="centerinside">
+      <input type="button" value="Save" onclick="saveSoundsettings()" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1 button">
     </div>
   </div>
 </div>
