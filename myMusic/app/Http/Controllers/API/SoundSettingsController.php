@@ -3,10 +3,15 @@
 namespace App\Http\Controllers\API;
 
 
-use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
+use Validator;
+
 use App\Models\SoundSettings;
 use App\Http\Resources\SoundSettingsResource;
+use App\Http\Controllers\Controller;
 
 class SoundSettingsController extends Controller
 {
@@ -45,57 +50,24 @@ class SoundSettingsController extends Controller
      */
     public function store(Request $request)
     {
-        /*
         $validator = Validator::make($request->all(),[
-            'volume' => 'required'
+            'volume' => 'required|numeric|max:100|min:0',
+            'treble' => 'required|numeric|max:100|min:0',
+            'mid' => 'required|numeric|max:100|min:0',
+            'bass' => 'required|numeric|max:100|min:0',
         ]);
-
+         
         if($validator->fails()){
             return response()->json($validator->errors());       
         }
 
-        $SoundSettings = SoundSettings::create([
-            'volume' => $request->volume,
-            'treble' => $request->treble,
-            'mid' => $request->mid,
-            'bass' => $request->bass
-         ]);
-        
-        return response()->json(['SoundSettings created successfully.', new SoundSettingsResource($SoundSettings)]);
-         */
-         /*
-        $SoundSettings = SoundSettings::create([
-            'volume' => $request->volume,
-            'treble' => $request->treble,
-            'mid' => $request->mid,
-            'bass' => $request->bass
-         ]);*/
-         
-        /*
-         $SoundSettings = SoundSettings::create([
-            'volume' => '100',
-            'treble' => '90',
-            'mid' => '80',
-            'bass' => '70'
-         ]);
-         
+        $soundsettings = new SoundSettings;
+        $soundsettings->volume = $request->volume;
+        $soundsettings->treble = $request->treble;
+        $soundsettings->mid = $request->mid;
+        $soundsettings->bass = $request->bass;
 
-          return new SoundSettingsResource($SoundSettings) ;
-*/
-        $SoundSettings = new SoundSettings;
-        $SoundSettings->volume=$request->volume;
-        $SoundSettings->treble=$request->treble;
-        $SoundSettings->mid=$request->mid;
-        $SoundSettings->bass=$request->bass;
-        $result=$SoundSettings->save();
-         if($result){
-            return["Result"=>"Data has been saved"];
-         }
-         else{
-            return["Result"=>"Operation failed"];
-         }
-            
-       
+        return response()->json(["POST succes, soundsettings inserted",$soundsettings]);
     }
 
     /**

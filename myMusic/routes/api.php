@@ -32,23 +32,6 @@ Route::get('/soundsettings', [App\Http\Controllers\API\SoundSettingsController::
 Route::post('/soundsettings', [App\Http\Controllers\API\SoundSettingsController::class, 'store']);
 
 Route::delete('/soundsettings/{id}', [App\Http\Controllers\API\SoundSettingsController::class, 'destroy']);
-/*
-Route::post("/soundsettings", function() {
-
-    request()->validate([
-        'volume' => 'required'
-    ]);
-
-    return Song::create([
-        'volume' => request('volume'),
-        'treble' => request('treble'),
-        'mid' => request('mid'),
-        'bass' => request('bass')
-    ]);
-
-});*/
-                            
-
 
 Route::get("/songs", function() {
 

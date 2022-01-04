@@ -49,7 +49,6 @@ function addPlaylist(item){
     } else {
         imgurl = '{{asset(\'assets/images/f2d4860e6f52543c49d6d7404cddf014f5a237e81416813936c182c19c6b3dbb23e5f6cf53ca08b3ba15a4ccb63c33dc94e889c943d69deebaf288_1280.jpg\')}}';
     }
-    console.log(imgurl);
     node.innerHTML = '<div class="u-container-layout u-similar-container u-container-layout-2">\
                         <img class="u-image u-image-circle u-image-1" src="'+imgurl+'" alt="" data-image-width="1280" data-image-height="1024">\
                         <h3 class="u-text u-text-default u-text-3">Playlist: '+item.name+' </h3>\
