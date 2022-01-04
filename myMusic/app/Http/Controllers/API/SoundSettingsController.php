@@ -35,6 +35,7 @@ class SoundSettingsController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(),[
+            'id' => 'required',
             'volume' => 'required|numeric|max:100|min:0',
             'treble' => 'required|numeric|max:100|min:0',
             'mid' => 'required|numeric|max:100|min:0',
@@ -46,10 +47,13 @@ class SoundSettingsController extends Controller
         }
 
         $soundsettings = new SoundSettings;
+        $soundsettings->id = $request->id;
         $soundsettings->volume = $request->volume;
         $soundsettings->treble = $request->treble;
         $soundsettings->mid = $request->mid;
         $soundsettings->bass = $request->bass;
+
+        Log::channel("stderr")->info($soundsettings->id);
 
         $soundsettings->save();
 
@@ -93,8 +97,6 @@ class SoundSettingsController extends Controller
             if($validator->fails()){
                 return response()->json($validator->errors());       
             }
-    
-            $soundsettings = new SoundSettings;
             $soundsettings->volume = $request->volume;
             $soundsettings->treble = $request->treble;
             $soundsettings->mid = $request->mid;

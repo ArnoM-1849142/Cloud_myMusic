@@ -7,6 +7,23 @@ $songs = array("lalala", "jodela", "i'm blue");
  @extends('layouts.website')
 
  @section('content')
+
+<script>
+  var access_token = null;
+  var refresh_token = null;
+  @isset($accessToken)
+    access_token = {!! json_encode($accessToken) !!};
+    localStorage.setItem("access_token", access_token);
+  @endisset
+
+  @isset($refreshToken)
+    refresh_token = {!! json_encode($refreshToken) !!}
+    localStorage.setItem("refresh_token", refresh_token);
+  @endisset
+</script>
+<script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/myMusic.js') }}"></script>
+
+
  <img id="soundBtn" src="{{asset('assets/images/soundicon.png')}}" width="35" height="35" style="position: fixed;  z-index: 999; top: 20px;  right: 20px; "/>
 
  <!-- The Modal -->
@@ -54,22 +71,7 @@ $songs = array("lalala", "jodela", "i'm blue");
 
 
 <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
- <link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css') }}" />
-
-    <script>
-      var access_token = null;
-      var refresh_token = null;
-      @isset($accessToken)
-      access_token = {!! json_encode($accessToken) !!};
-      localStorage.setItem("access_token", access_token);
-      @endisset
-
-      @isset($refreshToken)
-      refresh_token = {!! json_encode($refreshToken) !!}
-      localStorage.setItem("refresh_token", refresh_token);
-      @endisset
-    </script>
-    <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/myMusic.js') }}"></script>
+<link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css') }}" />
 
     <!-- section 1 -->  
      <section class="u-align-center u-clearfix u-image u-section-1" id="sec-9b1f" data-image-width="1527" data-image-height="1080">

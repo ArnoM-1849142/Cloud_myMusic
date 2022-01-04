@@ -79,4 +79,5 @@ class myMusicController extends Controller
     
         return redirect("https://accounts.spotify.com/authorize?".$query);
     }
+    
 }

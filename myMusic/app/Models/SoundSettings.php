@@ -12,6 +12,6 @@ class SoundSettings extends Model
     use HasFactory;
 
     protected $fillable = [
-        'volume', 'treble', 'mid', 'bass'
+        'id', 'volume', 'treble', 'mid', 'bass'
     ];
 }

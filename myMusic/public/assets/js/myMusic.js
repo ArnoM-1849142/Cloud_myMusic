@@ -116,7 +116,10 @@ function addTrack(item, index){
 
 // !!! requires filling in !!! //
 function refreshAccessToken(){
-    alert("Token refresh required");
+    alert("Session expired, please log in again");
+    localStorage.removeItem("access_key");
+    localStorage.removeItem("refresh_key");
+    window.location.replace("/loginSpotify");
 }
 
 function callApi(method, url, body, callback){
