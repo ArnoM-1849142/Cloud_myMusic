@@ -1,13 +1,13 @@
 <?php
 $songs = array("lalala", "jodela", "i'm blue");
- 
 ?>
 
 
  
  @extends('layouts.website')
 
- @section('section')
+
+ @section('content')
  <img id="soundBtn" src="{{asset('assets/images/soundicon.png')}}" width="35" height="35" style="position: fixed;  z-index: 999; top: 20px;  right: 20px; "/>
 
  
@@ -47,6 +47,22 @@ $songs = array("lalala", "jodela", "i'm blue");
  <link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css') }}" />
 
 
+    <script>
+      var access_token = null;
+      var refresh_token = null;
+      @isset($accessToken)
+      access_token = {!! json_encode($accessToken) !!};
+      localStorage.setItem("access_token", access_token);
+      @endisset
+
+      @isset($refreshToken)
+      refresh_token = {!! json_encode($refreshToken) !!}
+      localStorage.setItem("refresh_token", refresh_token);
+      @endisset
+    </script>
+    <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/myMusic.js') }}"></script>
+
+
     <!-- section 1 -->  
      <section class="u-align-center u-clearfix u-image u-section-1" id="sec-9b1f" data-image-width="1527" data-image-height="1080">
       <div class="u-clearfix u-sheet u-sheet-1s">
@@ -55,7 +71,7 @@ $songs = array("lalala", "jodela", "i'm blue");
         <p class="u-text u-text-body-alt-color u-text-2">founders: Molenaers A. &amp; Purnal L.</p>
         <div class="u-align-center u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-group-1">
           <div class="u-container-layout">
-            <a href="{{asset('http://127.0.0.1:8000')}}" class="u-active-palette-3-base u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-base u-palette-1-base u-radius-50 u-btn-1">Start Free Trial</a>
+            <a href="/loginSpotify" class="u-active-palette-3-base u-border-none u-btn u-btn-round u-button-style u-hover-palette-3-base u-palette-1-base u-radius-50 u-btn-1">Start Free Trial</a>
           </div>
         </div>
         <img class="u-expanded-width-sm u-expanded-width-xs u-image u-image-contain u-image-2" src="{{asset('assets/images/dssdsd-min.png')}}" data-image-width="1200" data-image-height="917">
@@ -69,19 +85,20 @@ $songs = array("lalala", "jodela", "i'm blue");
           <div class="u-layout">
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-                <div class="u-container-layout u-container-layout-1">
+                <div id="playlists" class="u-container-layout u-container-layout-1">
                   <h3 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Krijg afspeelijsten aan de hand van gekozen sfeer</h3>
-                  
-                  <!-- liedjes overzicht -->
+                
+                  <script> refreshPlaylists() </script>
+                  <!-- liedjes overzicht 
                   @foreach ($songs as $id)
                   <div class="u-container-layout u-similar-container u-container-layout-2">
                           <img class="u-image u-image-circle u-image-1" src="{{asset('assets/images/f2d4860e6f52543c49d6d7404cddf014f5a237e81416813936c182c19c6b3dbb23e5f6cf53ca08b3ba15a4ccb63c33dc94e889c943d69deebaf288_1280.jpg')}}" alt="" data-image-width="1280" data-image-height="1024">
                           <h4 class="u-text u-text-default u-text-2">Artist: <br>
                           </h4>
                           <h3 class="u-text u-text-default u-text-3">Song: {{$id}} </h3>     
-
                         </div>
                   @endforeach
+                  -->
                 </div>
               </div>
               <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-2">
@@ -339,7 +356,7 @@ $songs = array("lalala", "jodela", "i'm blue");
         </p>
       </div>
     </section>
-
+    
 
 
 @endsection
@@ -348,8 +365,13 @@ $songs = array("lalala", "jodela", "i'm blue");
 <!-- <script class="u-script" type="text/javascript" src="resources/js/soundsettings.js" ></script> 
  <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
 
+<<<<<<< HEAD
 <script class="u-script" type="text/javascript" src="{{asset('assets/jquery.js')}}" defer=""></script>
 <script class="u-script" type="text/javascript" src="{{asset('assets/nicepage.js')}}" defer=""></script>-->
+=======
+<script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/jquerry.js') }}" defer=""></script>
+<script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/nicepage.js') }}" defer=""></script>
+>>>>>>> 4d215e46ce2a706c98be3f384963006e96bf3159
 
 <script type="application/ld+json">{
 		"@context": "http://schema.org",
