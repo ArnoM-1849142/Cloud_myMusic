@@ -85,3 +85,7 @@
     border: 3px solid rgb(59, 5, 146);
     margin: 25px;
   }
+
+  .darktext{
+    color: black;
+  }
