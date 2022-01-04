@@ -6,12 +6,9 @@ $songs = array("lalala", "jodela", "i'm blue");
  
  @extends('layouts.website')
 
-
  @section('content')
  <img id="soundBtn" src="{{asset('assets/images/soundicon.png')}}" width="35" height="35" style="position: fixed;  z-index: 999; top: 20px;  right: 20px; "/>
 
- 
- <h1 id="textboxrequest">textbox for request </h1>
  <!-- The Modal -->
 <div id="myModal" class="modal">
   <!-- Modal content -->
@@ -19,24 +16,24 @@ $songs = array("lalala", "jodela", "i'm blue");
     <span class="close">&times;</span>
     <div class="slidecontainer">
       <div class="center">
-        <p>Volume</p>
+        <p class="darktext">Volume</p>
         <input type="range" min="1" max="100" value="50" class="slider"  orient="vertical"  id="volume">
-        <p id="volumeT">100 %</p>
+        <p class="darktext" id="volumeT">100 %</p>
       </div>
       <div class="center">
-        <p>treble</p>
+        <p class="darktext">treble</p>
         <input type="range" min="1" max="100" value="50" class="slider" id="treble">
-        <p id="trebleT">100 %</p>
+        <p class="darktext" id="trebleT">100 %</p>
       </div>
       <div class="center">
-        <p>mid</p>
+        <p class="darktext">mid</p>
         <input type="range" min="1" max="100" value="50" class="slider" id="mid">
-        <p id="midT">100 %</p>
+        <p class="darktext" id="midT">100 %</p>
       </div>
       <div class="center">
-      <p>bass</p>
+      <p class="darktext">bass</p>
       <input type="range" min="1" max="100" value="50" class="slider" id="bass">
-      <p id="bassT">100 %</p>
+      <p class="darktext" id="bassT">100 %</p>
       </div>
     </div>
   </div>
@@ -46,6 +43,20 @@ $songs = array("lalala", "jodela", "i'm blue");
 <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
  <link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css') }}" />
 
+    <script>
+      var access_token = null;
+      var refresh_token = null;
+      @isset($accessToken)
+      access_token = {!! json_encode($accessToken) !!};
+      localStorage.setItem("access_token", access_token);
+      @endisset
+
+      @isset($refreshToken)
+      refresh_token = {!! json_encode($refreshToken) !!}
+      localStorage.setItem("refresh_token", refresh_token);
+      @endisset
+    </script>
+    <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/myMusic.js') }}"></script>
 
     <script>
       var access_token = null;
@@ -362,16 +373,10 @@ $songs = array("lalala", "jodela", "i'm blue");
 @endsection
 
 @section('script')
-<!-- <script class="u-script" type="text/javascript" src="resources/js/soundsettings.js" ></script> 
- <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
 
-<<<<<<< HEAD
-<script class="u-script" type="text/javascript" src="{{asset('assets/jquery.js')}}" defer=""></script>
-<script class="u-script" type="text/javascript" src="{{asset('assets/nicepage.js')}}" defer=""></script>-->
-=======
 <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/jquerry.js') }}" defer=""></script>
 <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/nicepage.js') }}" defer=""></script>
->>>>>>> 4d215e46ce2a706c98be3f384963006e96bf3159
+
 
 <script type="application/ld+json">{
 		"@context": "http://schema.org",

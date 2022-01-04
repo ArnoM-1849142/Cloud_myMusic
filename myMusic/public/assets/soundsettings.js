@@ -8,20 +8,29 @@ var btn = document.getElementById("soundBtn");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-var textboxhttp = document.getElementById("textboxrequest");
-
-
+var slidersdata;
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
   fetch("http://127.0.0.1:8000/api/soundsettings")
   .then(response => response.json())
-  .then(data => showdata(data));
+  .then(data => savedata(data));
 }
 
-function showdata(data){
-  console.log(data);
-  textboxhttp.innerHTML=data;
+function savedata(data){
+  slidersdata = data;
+
+  //set text in volume settings
+  volumeText.innerHTML = slidersdata[0].volume + "%";
+  trebleText.innerHTML = slidersdata[0].treble + "%";
+  midText.innerHTML = slidersdata[0].mid + "%";
+  bassText.innerHTML = slidersdata[0].bass + "%";
+
+  //set sliders in volume settings
+  volume.value = slidersdata[0].volume;
+  treble.value = slidersdata[0].treble;
+  mid.value = slidersdata[0].mid;
+  bass.value = slidersdata[0].bass;
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -41,6 +50,7 @@ var volume = document.getElementById("volume")
 var treble = document.getElementById("treble")
 var mid = document.getElementById("mid")
 var bass = document.getElementById("bass")
+
 
 //get textbox id's to put the slider values
 var volumeText = document.getElementById("volumeT")

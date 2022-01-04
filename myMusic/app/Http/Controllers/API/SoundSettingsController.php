@@ -78,10 +78,10 @@ class SoundSettingsController extends Controller
             'mid' => '80',
             'bass' => '70'
          ]);
-         */
+         
 
-         // return new SoundSettingsResource($SoundSettings) ;
-
+          return new SoundSettingsResource($SoundSettings) ;
+*/
         $SoundSettings = new SoundSettings;
         $SoundSettings->volume=$request->volume;
         $SoundSettings->treble=$request->treble;
@@ -94,7 +94,7 @@ class SoundSettingsController extends Controller
          else{
             return["Result"=>"Operation failed"];
          }
-
+            
        
     }
 
@@ -120,7 +120,7 @@ class SoundSettingsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SoundSettingsResource $SoundSettings)
+    public function update(Request $request, SoundSettings $SoundSettings)
     {
         $validator = Validator::make($request->all(),[
             'volume' => 'required'
