@@ -10,8 +10,6 @@ $songs = array("lalala", "jodela", "i'm blue");
  @section('section')
  <img id="soundBtn" src="{{asset('assets/images/soundicon.png')}}" width="35" height="35" style="position: fixed;  z-index: 999; top: 20px;  right: 20px; "/>
 
- 
- <h1 id="textboxrequest">textbox for request </h1>
  <!-- The Modal -->
 <div id="myModal" class="modal">
   <!-- Modal content -->
