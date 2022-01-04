@@ -27,8 +27,8 @@ class myMusicController extends Controller
 
             $response = Http::asForm()->post('https://accounts.spotify.com/api/token', [
                 'grant_type' => 'authorization_code',
-                'client_id' => 'acf9eea5972a4da5a92eb8201bae12f6',
-                'client_secret' => 'f83c6fde33844e289421ffbf4b5ead17',
+                'client_id' => getenv("SPOTIFY_CLIENT_ID"),
+                'client_secret' => getenv("SPOTIFY_CLIENT_SECRET"),
                 'redirect_uri' => 'http://localhost:8000',
                 'code' => $code,
             ]);
@@ -43,9 +43,6 @@ class myMusicController extends Controller
                 'refresh_token' => $refreshToken
             ]);
 
-            //return view("homepage")->with("accessToken", $accessToken)
-            //                        ->with("refreshToken", $refreshToken)
-            //                        ->with("expiresIn", $expiresIn);
             return redirect("http://localhost:8000?".$query);
         } elseif (isset($_GET['access_token']) && isset($_GET['refresh_token'])) {
             return view("homepage")->with("accessToken", $_GET['access_token'])
@@ -73,7 +70,7 @@ class myMusicController extends Controller
         $request->session()->put('state', $state = Str::random(40));
     
         $query = http_build_query([
-            'client_id' => 'acf9eea5972a4da5a92eb8201bae12f6',
+            'client_id' => getenv("SPOTIFY_CLIENT_ID"),
             'redirect_uri' => 'http://localhost:8000',
             'response_type' => 'code',
             'scope' => 'user-read-private user-read-email user-modify-playback-state user-read-playback-position user-library-read streaming user-read-playback-state user-read-recently-played playlist-read-private',
