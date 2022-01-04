@@ -234,7 +234,7 @@ $songs = array("lalala", "jodela", "i'm blue");
                 <p class="u-text u-text-body-alt-color u-text-3" id="kanyeQuote"></p>
                 <p class="u-text u-text-body-alt-color u-text-4">~ Kanye West
                 </p>
-                <a href="https://kanye.rest/" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-2">read more</a>
+                <a href="https://kanye.rest/" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-btn-2">read more about the api</a>
               </div>
             </div>
           </div>
@@ -246,26 +246,131 @@ $songs = array("lalala", "jodela", "i'm blue");
 
      <!-- section 6 -->
     <section class="u-clearfix u-palette-1-base u-section-6" id="carousel_070c">
+
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
           <div class="u-layout">
             <div class="u-layout-row">
               <div class="u-container-style u-layout-cell u-left-cell u-size-22 u-layout-cell-1">
                 <div class="u-container-layout u-valign-top u-container-layout-1">
-                  <h3 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-text-1"> Our Concept &amp; Artists</h3>
-                  <p class="u-text u-text-body-alt-color u-text-2"> template header
+                  <h3 class="u-custom-font u-font-oswald u-text u-text-palette-3-base u-text-1"> Evenements &amp; Artists</h3>
+                  <p class="u-text u-text-body-alt-color u-text-2"> Promote yourself!
                   </p>
                 </div>
               </div>
               <div class="u-container-style u-layout-cell u-right-cell u-size-38 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
-                  <p class="u-text u-text-3"> Sit amet porttitor eget dolor morbi non arcu risus quis. Lacus sed viverra tellus in hac habitasse. Nam libero justo laoreet sit. Donec ultrices tincidunt arcu non sodales neque sodales. Felis eget nunc lobortis mattis aliquam faucibus. Sed id semper risus in hendrerit gravida rutrum quisque. Morbi tincidunt ornare massa eget.</p>
-                  <a href="https://nicepage.com/k/portfolio-html-templates" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-2">read more</a>
+                  <p class="u-text u-text-3"> The overview below is a listing of upcoming events where you can go to and listen to the best new music.  This list contains event added by all members of the myMusic community. You too can contribute events here to promote yourself! </p>
+                  <a href="https://nicepage.com/k/portfolio-html-templates" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-2"> add evenement </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+
+
+        <!-- list repeater with evenements inside -->
+
+        <div class="u-list u-list-1">
+          <div class="u-repeater u-repeater-1">
+
+        <!-- evenement 1 -->
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-1" data-image-width="2000" data-image-height="1333">
+            <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-1"> <img src="{{asset('assets/images/myMusic2.png')}}" alt=""></span>
+                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-1">
+                  <div class="u-container-layout u-container-layout-4">
+                    <h3 class="u-text u-text-default u-text-3">Title</h3>
+                  </div>
+                </div>
+                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
+                <h5 class="u-text u-text-default u-text-4">date</h5>
+                <h5 class="u-text u-text-default u-text-5">Location</h5>
+                <p class="u-text u-text-default u-text-6">Description:&nbsp;<br>Click to select the text box. Click again or double click to start editing the text.
+                </p>
+              </div>
+            </div>
+
+        <!-- evenement 2 -->            
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-2" data-image-width="2000" data-image-height="1333">
+              <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-2"><img src="{{asset('assets/images/myMusic2.png')}}" alt=""></span>
+                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-2">
+                  <div class="u-container-layout u-container-layout-6">
+                    <h3 class="u-text u-text-default u-text-7">Sample Headline</h3>
+                  </div>
+                </div>
+                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-2"></div>
+                <h5 class="u-text u-text-default u-text-8">Sample Headline</h5>
+                <h5 class="u-text u-text-default u-text-9">date</h5>
+                <p class="u-text u-text-default u-text-10">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+              </div>
+            </div>
+
+        <!-- evenement 3 --> <!--
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-3" data-image-width="2000" data-image-height="1333">
+              <div class="u-container-layout u-similar-container u-container-layout-7"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-3"><img src="images/myMusic2.png" alt=""></span>
+                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-3">
+                  <div class="u-container-layout u-container-layout-8">
+                    <h3 class="u-text u-text-default u-text-11">Sample Headline</h3>
+                  </div>
+                </div>
+                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-3"></div>
+                <h5 class="u-text u-text-default u-text-12">Sample Headline</h5>
+                <h5 class="u-text u-text-default u-text-13">date</h5>
+                <p class="u-text u-text-default u-text-14">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+              </div>
+            </div> -->
+            
+        <!-- evenement 4 -->            
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-4" data-image-width="2000" data-image-height="1333">
+              <div class="u-container-layout u-similar-container u-container-layout-9"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-4"><img src="images/myMusic2.png" alt=""></span>
+                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-4">
+                  <div class="u-container-layout u-container-layout-10">
+                    <h3 class="u-text u-text-default u-text-15">Sample Headline</h3>
+                  </div>
+                </div>
+                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-4"></div>
+                <h5 class="u-text u-text-default u-text-16">Sample Headline</h5>
+                <h5 class="u-text u-text-default u-text-17">date</h5>
+                <p class="u-text u-text-default u-text-18">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+              </div>
+            </div>
+
+        <!-- evenement 5 -->
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-5" data-image-width="2000" data-image-height="1333">
+              <div class="u-container-layout u-similar-container u-container-layout-11"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-5"><img src="images/myMusic2.png" alt=""></span>
+                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-5">
+                  <div class="u-container-layout u-container-layout-12">
+                    <h3 class="u-text u-text-default u-text-19">Sample Headline</h3>
+                  </div>
+                </div>           
+                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-5"></div>
+                <h5 class="u-text u-text-default u-text-20">Sample Headline</h5>
+                <h5 class="u-text u-text-default u-text-21">date</h5>
+                <p class="u-text u-text-default u-text-22">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+              </div>
+            </div>
+
+        <!-- evenement 6 -->
+            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-6" data-image-width="2000" data-image-height="1333">
+              <div class="u-container-layout u-similar-container u-container-layout-13"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-6"><img src="images/myMusic2.png" alt=""></span>
+                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-6">
+                  <div class="u-container-layout u-container-layout-14">
+                    <h3 class="u-text u-text-default u-text-23">Sample Headline</h3>
+                  </div>
+                </div>
+                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-6"></div>
+                <h5 class="u-text u-text-default u-text-24">Sample Headline</h5>
+                <h5 class="u-text u-text-default u-text-25">date</h5>
+                <p class="u-text u-text-default u-text-26">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+        <!-- old
         <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
           <div class="u-gallery-inner u-gallery-inner-1">
             <div class="u-effect-fade u-gallery-item">
@@ -306,6 +411,7 @@ $songs = array("lalala", "jodela", "i'm blue");
             </div>
           </div>
         </div>
+        -->
       </div>
     </section>
 
