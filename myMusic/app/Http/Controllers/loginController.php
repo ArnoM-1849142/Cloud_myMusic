@@ -24,7 +24,6 @@ class loginController extends Controller
         if (isset($_GET['code'])) {
 
             $code = $_GET['code'];
-            //$state = $request->session()->pull('state');
             $state = $_GET['state'];
             throw_unless(
                 strlen($state) > 0 && $state === $request->state,

@@ -22,6 +22,26 @@
   height: 120px;            /* Footer height */
 }
 
+#soundBtn{
+  cursor: pointer;
+}
+
+#soundBtn path.soundbuttonfill{
+  stroke: #efab47;
+  fill: #efab47;
+}
+#soundBtn:hover path.soundbuttonfill{
+  stroke: white;
+  fill: white;
+}
+
+#soundBtn path.soundbuttonstroke{
+  stroke: #efab47;
+}
+#soundBtn:hover path.soundbuttonstroke{
+  stroke: white;
+}
+
 .header{
   height: 100px;
   box-shadow: 0px 0px 3px 3px black;
@@ -44,6 +64,9 @@
 .header-title{
   cursor: pointer;
   color: white;
+}
+.header-title:hover{
+  color: #efab47;
 }
 
 .user-parent{
