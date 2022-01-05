@@ -3,39 +3,28 @@
 namespace App\Http\Controllers\API;
 
 
-use App\Http\Controllers\Controller;
+
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Support\Facades\Log;
+use Validator;
+
 use App\Models\SoundSettings;
 use App\Http\Resources\SoundSettingsResource;
+use App\Http\Controllers\Controller;
 
 class SoundSettingsController extends Controller
 {
-    //use Illuminate\Http\Request;
-
-    //
-
-     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function soundsettingZoekerService()
-    {
-        return SoundSettings::all();
-    }
-
-
-
-        /**
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $data = SoundSettings::latest()->get();
-        return response()->json([SoundSettingsResource::collection($data), 'SoundSettings fetched.']);
+        return SoundSettings::all();
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -45,57 +34,30 @@ class SoundSettingsController extends Controller
      */
     public function store(Request $request)
     {
-        /*
         $validator = Validator::make($request->all(),[
-            'volume' => 'required'
+            'id' => 'required',
+            'volume' => 'required|numeric|max:100|min:0',
+            'treble' => 'required|numeric|max:100|min:0',
+            'mid' => 'required|numeric|max:100|min:0',
+            'bass' => 'required|numeric|max:100|min:0',
         ]);
-
+         
         if($validator->fails()){
-            return response()->json($validator->errors());       
+            return response()->json([$validator->errors()], 404);       
         }
 
-        $SoundSettings = SoundSettings::create([
-            'volume' => $request->volume,
-            'treble' => $request->treble,
-            'mid' => $request->mid,
-            'bass' => $request->bass
-         ]);
-        
-        return response()->json(['SoundSettings created successfully.', new SoundSettingsResource($SoundSettings)]);
-         */
-         /*
-        $SoundSettings = SoundSettings::create([
-            'volume' => $request->volume,
-            'treble' => $request->treble,
-            'mid' => $request->mid,
-            'bass' => $request->bass
-         ]);*/
-         
-        /*
-         $SoundSettings = SoundSettings::create([
-            'volume' => '100',
-            'treble' => '90',
-            'mid' => '80',
-            'bass' => '70'
-         ]);
-         
+        $soundsettings = new SoundSettings;
+        $soundsettings->id = $request->id;
+        $soundsettings->volume = $request->volume;
+        $soundsettings->treble = $request->treble;
+        $soundsettings->mid = $request->mid;
+        $soundsettings->bass = $request->bass;
 
-          return new SoundSettingsResource($SoundSettings) ;
-*/
-        $SoundSettings = new SoundSettings;
-        $SoundSettings->volume=$request->volume;
-        $SoundSettings->treble=$request->treble;
-        $SoundSettings->mid=$request->mid;
-        $SoundSettings->bass=$request->bass;
-        $result=$SoundSettings->save();
-         if($result){
-            return["Result"=>"Data has been saved"];
-         }
-         else{
-            return["Result"=>"Operation failed"];
-         }
-            
-       
+        Log::channel("stderr")->info($soundsettings->id);
+
+        $soundsettings->save();
+
+        return response()->json(["POST succes, soundsettings inserted",$soundsettings]);
     }
 
     /**
@@ -108,7 +70,7 @@ class SoundSettingsController extends Controller
     {
         $SoundSettings = SoundSettings::find($id);
         if (is_null($SoundSettings)) {
-            return response()->json('Data not found', 404); 
+            return response()->json(['Data not found', 'please provide a valid id'], 404); 
         }
         return response()->json([new SoundSettingsResource($SoundSettings)]);
     }
@@ -120,23 +82,34 @@ class SoundSettingsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SoundSettings $SoundSettings)
+    public function update(Request $request, $id)
     {
-        $validator = Validator::make($request->all(),[
-            'volume' => 'required'
-        ]);
 
-        if($validator->fails()){
-            return response()->json($validator->errors());       
+        $soundsettings = SoundSettings::find($id);
+        if ($soundsettings !== null){
+            $validator = Validator::make($request->all(),[
+                'volume' => 'required|numeric|max:100|min:0',
+                'treble' => 'required|numeric|max:100|min:0',
+                'mid' => 'required|numeric|max:100|min:0',
+                'bass' => 'required|numeric|max:100|min:0',
+            ]);
+             
+            if($validator->fails()){
+                return response()->json($validator->errors());       
+            }
+            $soundsettings->volume = $request->volume;
+            $soundsettings->treble = $request->treble;
+            $soundsettings->mid = $request->mid;
+            $soundsettings->bass = $request->bass;
+    
+            $soundsettings->save();
+            
+            return response()->json(['SoundSettings updated successfully.', $soundsettings]);
+        } 
+        else 
+        {
+            return response()->json(['failed','No soundsetting was found! please provide a valid Id'],404);
         }
-
-        $SoundSettings->volume = $request->volume;
-        $SoundSettings->treble = $request->treble;
-        $SoundSettings->mid = $request->mid;
-        $SoundSettings->bass = $request->bass;
-        $SoundSettings->save();
-        
-        return response()->json(['SoundSettings updated successfully.', new SoundSettingsResource($SoundSettings)]);
     }
 
     /**
@@ -145,11 +118,21 @@ class SoundSettingsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SoundSettings $SoundSettings)
+    public function destroy($id)
     {
-        $SoundSettings->delete();
+        $soundsettings = SoundSettings::find($id);
 
-        return response()->json('SoundSettings deleted successfully');
+        if ($soundsettings !== null)
+        {
+
+            $soundsettings->delete();
+            
+            return response()->json(['Soundsetting removed succesfully', $soundsettings]);
+        } 
+        else 
+        {
+            return response()->json(['failed','No soundsetting was found! please provide a valid Id'], 404);
+        }
     }
 
 

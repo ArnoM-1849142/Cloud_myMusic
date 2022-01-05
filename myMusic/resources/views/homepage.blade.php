@@ -7,57 +7,75 @@ $songs = array("lalala", "jodela", "i'm blue");
  @extends('layouts.website')
 
  @section('content')
- <img id="soundBtn" src="{{asset('assets/images/soundicon.png')}}" width="35" height="35" style="position: fixed;  z-index: 999; top: 20px;  right: 20px; "/>
+
+<script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/myMusic.js') }}"></script>
+
+
+ <!--<img id="soundBtn" src="{{asset('assets/images/soundicon.png')}}" width="35" height="35" style="position: fixed;  z-index: 999; top: 20px;  right: 20px; "/>-->
+<div style="height: 50px; position: fixed;  z-index: 999; top: 25px;  right: 25px; ">
+  <svg id="soundBtn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" viewBox="0 0 104 80" version="1.1">
+      <desc>Sound button</desc>
+      <defs/>
+      <g id="3.Multimedia" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+          <g id="Multimedia-(Stroke)" transform="translate(-498.000000, -112.000000)" stroke="#263238" stroke-width="3.5">
+              <g id="3-multimeda-sound-loud" transform="translate(500.000000, 114.000000)">
+                  <path class="soundbuttonfill" d="M15,53 L2.99942248,53 C1.34288718,53 0,51.6526814 0,49.9999809 L0,26.0000191 L0,26.0000191 C0,24.3431543 1.34435073,23 2.99942248,23 L15,23" id="Layer-1"/>
+                  <path class="soundbuttonfill" fill="#efab47" d="M41.1547359,0.941677165 C43.2784166,-0.827905208 45,-0.0318034532 45,2.72842698 L45,73.0157762 C45,75.7721532 43.2793189,76.5728602 41.1547359,74.802526 L15,53.0087794 L15,22.7354238 L41.1547359,0.941677165 Z" id="Layer-2"/>
+                  <path class="soundbuttonstroke" d="M73,75.1369725 C88.5904175,70.0307768 99.8510697,55.363628 99.8510697,38.0664131 C99.8510697,20.7738776 88.5965095,6.10998553 73.0126522,1" id="Layer-3"/>
+                  <path class="soundbuttonstroke" d="M67,61.4633961 C77.3361812,58.7887497 84.9700853,49.3994824 84.9700853,38.2272212 C84.9700853,27.0673922 77.3531613,17.6865911 67.0344952,15" id="Layer-4"/>
+                  <path class="soundbuttonstroke" d="M60,48 L60,48 C60.7092383,48 61.4012316,47.9261654 62.0687127,47.7857633 C66.5989154,46.8328525 70,42.8136092 70,38 C70,33.1154054 66.4978654,29.0487782 61.8675653,28.1740873 C61.2625401,28.0597945 60.6382529,28 60,28" id="Layer-5"/>
+              </g>
+          </g>
+      </g>
+  </svg>
+</div>
 
  <!-- The Modal -->
 <div id="myModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
-    <span class="close">&times;</span>
-    <div class="slidecontainer">
-      <div class="center">
-        <p class="darktext">Volume</p>
-        <input type="range" min="1" max="100" value="50" class="slider"  orient="vertical"  id="volume">
-        <p class="darktext" id="volumeT">100 %</p>
+    <div>
+      <span class="close">&times;</span>
+      <div class="slidecontainer">
+        <div class="center">
+          <div style="display: flex; align-items: center;">
+            <div class="darktext">Volume: </div>
+            <div class="darktext" id="volumeT">50 %</div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider"  id="volume">
+        </div>
+        <div class="center">
+          <div style="display: flex; align-items: center;">
+            <div class="darktext">treble: </div>
+            <div class="darktext" id="trebleT">50 %</div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider" id="treble">
+        </div>
+        <div class="center">
+          <div style="display: flex; align-items: center;">
+            <div class="darktext">mid: </div>
+            <div class="darktext" id="midT">50 %</div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider" id="mid">
+        </div>
+        <div class="center">
+          <div style="display: flex; align-items: center;">
+            <div class="darktext">bass: </div>
+            <div class="darktext" id="bassT">50 %</div>
+          </div>
+          <input type="range" min="0" max="100" value="50" class="slider" id="bass">
+        </div>
       </div>
-      <div class="center">
-        <p class="darktext">treble</p>
-        <input type="range" min="1" max="100" value="50" class="slider" id="treble">
-        <p class="darktext" id="trebleT">100 %</p>
-      </div>
-      <div class="center">
-        <p class="darktext">mid</p>
-        <input type="range" min="1" max="100" value="50" class="slider" id="mid">
-        <p class="darktext" id="midT">100 %</p>
-      </div>
-      <div class="center">
-      <p class="darktext">bass</p>
-      <input type="range" min="1" max="100" value="50" class="slider" id="bass">
-      <p class="darktext" id="bassT">100 %</p>
-      </div>
+    </div>
+    <div class="centerinside">
+      <input type="button" value="Save" onclick="saveSoundsettings()" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1 button">
     </div>
   </div>
 </div>
 
 
 <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
- <link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css') }}" />
-
-    <script>
-      var access_token = null;
-      var refresh_token = null;
-      @isset($accessToken)
-      access_token = {!! json_encode($accessToken) !!};
-      localStorage.setItem("access_token", access_token);
-      @endisset
-
-      @isset($refreshToken)
-      refresh_token = {!! json_encode($refreshToken) !!}
-      localStorage.setItem("refresh_token", refresh_token);
-      @endisset
-    </script>
-    <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/myMusic.js') }}"></script>
-
+<link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css')}}" />
     <script>
       var access_token = null;
       var refresh_token = null;
@@ -87,7 +105,7 @@ $songs = array("lalala", "jodela", "i'm blue");
         </div>
         <img class="u-expanded-width-sm u-expanded-width-xs u-image u-image-contain u-image-2" src="{{asset('assets/images/dssdsd-min.png')}}" data-image-width="1200" data-image-height="917">
       </div>
-    </section>
+    </section> -->
 
      <!-- section 2 -->
      <section class="u-clearfix u-palette-1-base u-section-2" id="carousel_0536">
@@ -100,16 +118,7 @@ $songs = array("lalala", "jodela", "i'm blue");
                   <h3 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Krijg afspeelijsten aan de hand van gekozen sfeer</h3>
                 
                   <script> refreshPlaylists() </script>
-                  <!-- liedjes overzicht 
-                  @foreach ($songs as $id)
-                  <div class="u-container-layout u-similar-container u-container-layout-2">
-                          <img class="u-image u-image-circle u-image-1" src="{{asset('assets/images/f2d4860e6f52543c49d6d7404cddf014f5a237e81416813936c182c19c6b3dbb23e5f6cf53ca08b3ba15a4ccb63c33dc94e889c943d69deebaf288_1280.jpg')}}" alt="" data-image-width="1280" data-image-height="1024">
-                          <h4 class="u-text u-text-default u-text-2">Artist: <br>
-                          </h4>
-                          <h3 class="u-text u-text-default u-text-3">Song: {{$id}} </h3>     
-                        </div>
-                  @endforeach
-                  -->
+            
                 </div>
               </div>
               <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-2">

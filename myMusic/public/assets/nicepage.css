@@ -22,6 +22,59 @@
   height: 120px;            /* Footer height */
 }
 
+#soundBtn{
+  cursor: pointer;
+}
+
+#soundBtn path.soundbuttonfill{
+  stroke: #efab47;
+  fill: #efab47;
+}
+#soundBtn:hover path.soundbuttonfill{
+  stroke: white;
+  fill: white;
+}
+
+#soundBtn path.soundbuttonstroke{
+  stroke: #efab47;
+}
+#soundBtn:hover path.soundbuttonstroke{
+  stroke: white;
+}
+
+.header{
+  height: 100px;
+  box-shadow: 0px 0px 3px 3px black;
+  z-index: 10;
+  position: sticky;
+  top: 0px;
+  background-color: #292870;
+}
+
+.header-parent{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-title{
+  cursor: pointer;
+  color: white;
+}
+.header-title:hover{
+  color: #efab47;
+}
+
+.user-parent{
+  margin-left: auto;
+  margin-right: 0;
+  border-radius: 5px;
+}
+
 .button{
   background-image: none;
   border-style: none;

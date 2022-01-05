@@ -1,7 +1,15 @@
+.centerinside{
+  width: 100%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
 .slidecontainer {
     width: 80%;
     margin: auto;
     display: flex;
+    flex-direction: column;
     overflow: hidden;
   }
   
@@ -56,11 +64,14 @@
   
   /* Modal Content */
   .modal-content {
+    display: flex;
+    flex-direction: column;
     background-color: #fefefe;
     margin: auto;
     padding: 25px;
     border: 2px solid #888;
     width: 50%;
+    border-radius: 10px;
   }
   
   /* The Close Button */
@@ -81,11 +92,16 @@
 
 
   .center {
+    display: flex;
     text-align: center;
     border: 3px solid rgb(59, 5, 146);
     margin: 25px;
+    flex-direction: column;
+    align-items: center;
   }
 
   .darktext{
     color: black;
+    margin-top: 10px;
+    margin-bottom: 5px;
   }

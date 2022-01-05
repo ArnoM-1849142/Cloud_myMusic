@@ -1,23 +1,33 @@
+const SOUNDSETTINGS = "http://127.0.0.1:8000/api/soundsettings/";
+const SOUNDSETTINGSSPECIFIC = "http://127.0.0.1:8000/api/soundsettings/{id}"
+
+var userInfo = null;
+
+var access_token = localStorage.getItem("access_token");
+if (access_token !== null){
+  initializeUser(access_token);
+} else {
+  window.location.replace("/loginSpotify");  //redirect to login
+}
 
 // Get the modal
 var modal = document.getElementById("myModal");
 
 // Get the button that opens the modal
-var btn = document.getElementById("soundBtn");
+var soundBtn = document.getElementById("soundBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 var slidersdata;
 // When the user clicks the button, open the modal 
-btn.onclick = function() {
+soundBtn.onclick = async function() {
   modal.style.display = "block";
-  fetch("http://127.0.0.1:8000/api/soundsettings")
-  .then(response => response.json())
-  .then(data => savedata(data));
+  let soundsettings = await getSoundsettings();
+  setData(soundsettings);
 }
 
-function savedata(data){
+function setData(data){
   slidersdata = data;
 
   //set text in volume settings
@@ -31,6 +41,16 @@ function savedata(data){
   treble.value = slidersdata[0].treble;
   mid.value = slidersdata[0].mid;
   bass.value = slidersdata[0].bass;
+}
+
+async function initializeUser(){
+  await getSpotifyUserinfo(access_token);
+  setUserInfoInHeader();
+}
+
+function setUserInfoInHeader(){
+  let userInfoBlock = document.getElementById("user-info");
+  userInfoBlock.innerHTML = userInfo.display_name;
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -57,6 +77,75 @@ var volumeText = document.getElementById("volumeT")
 var trebleText = document.getElementById("trebleT")
 var midText = document.getElementById("midT")
 var bassText = document.getElementById("bassT")
+
+function getSoundsettings(){
+  let url = SOUNDSETTINGSSPECIFIC.replace("{id}", userInfo.id)
+  return fetch(url)
+      .then(response => response.json())
+      .then(data => {return data;});
+}
+
+async function saveSoundsettings(){
+  let soundsettings = await getSoundsettings();
+  //console.log(soundsettings[0]);
+
+  if (userInfo === null){
+    alert("please log in to save sound settings");
+  }
+  else if (soundsettings[0] == 'Data not found') //if user has no soundsettings, do POST
+  {
+    data = {
+      id: userInfo.id,
+      volume: bass.value,
+      treble: treble.value,
+      mid: mid.value,
+      bass: bass.value
+    }
+  
+    fetch(SOUNDSETTINGS, {
+      method: "POST", 
+      headers: {'Content-Type': 'application/json',},
+      body: JSON.stringify(data)
+    }).then(res => {
+      console.log("Request complete! response:", res);
+    });
+  }
+  else {                                            // if user already has soundsettings, do PUT
+    data = {
+      volume: bass.value,
+      treble: treble.value,
+      mid: mid.value,
+      bass: bass.value
+    }
+    let url = SOUNDSETTINGSSPECIFIC.replace('{id}', userInfo.id);
+
+    fetch(url, {
+      method: "PUT", 
+      headers: {'Content-Type': 'application/json',},
+      body: JSON.stringify(data)
+    }).then(res => {
+      console.log("Request complete! response:", res);
+    });
+  }
+  
+}
+
+async function getSpotifyUserinfo(access_token){ 
+  //if userInfo not previously fetched, get from API
+  if (userInfo === null){
+    userInfo = await fetch("https://api.spotify.com/v1/me", {
+    method: "GET", 
+    headers: {'Content-Type': 'application/json',
+              'Authorization': 'Bearer ' + access_token},
+    }).then(response => response.json())
+    .then(data => {return data;})
+    .catch(error => {
+      alert("login failed, please try again. Error = " + error);
+      window.location.replace("/loginSpotify");  //redirect to login
+    });
+  }
+  return userInfo;
+}
 
 
 // update textbox for slidervalues

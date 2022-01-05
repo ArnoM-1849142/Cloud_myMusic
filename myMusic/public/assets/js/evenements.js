@@ -24,7 +24,7 @@ window.onload = function showEvenements(){
   
     fetch('https://mymusicpythonservice.herokuapp.com/Evenements')
     .then(response => response.json())
-    .then(data => showData(data));
+    .then(data => showEvents(data));
    
 }
 
@@ -65,14 +65,12 @@ function createNewEvenement(){
   });
   modal.style.display = "none";
 
-  alert("new event created!")
+  showEvenements();
 }
 
 
-
-function showData(data){
-    //title = data["title"]
-    
+function showEvents(data){
+  evenementrepeater.innerHTML= "";
     for (let [key, value] of Object.entries(data)) {
         evenementrepeater.innerHTML += evenementInfoBlock(
             key,
