@@ -8,19 +8,6 @@ $songs = array("lalala", "jodela", "i'm blue");
 
  @section('content')
 
-<script>
-  var access_token = null;
-  var refresh_token = null;
-  @isset($accessToken)
-    access_token = {!! json_encode($accessToken) !!};
-    localStorage.setItem("access_token", access_token);
-  @endisset
-
-  @isset($refreshToken)
-    refresh_token = {!! json_encode($refreshToken) !!};
-    localStorage.setItem("refresh_token", refresh_token);
-  @endisset
-</script>
 <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/myMusic.js') }}"></script>
 
 

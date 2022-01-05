@@ -15,6 +15,7 @@ if ((access_token === null) || (refresh_token === null)){ //check if tokens wher
     if ((localStorage.getItem("access_token") === null) || (refresh_token = localStorage.getItem("refresh_token") === null)){
         // code to prompt user to log in
         alert("please log in to your spotify account");
+        window.location.replace("/loginSpotify");
     }
 }
 

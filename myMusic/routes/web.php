@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\myMusicController;
+use App\Http\Controllers\loginController;
 use App\Models\Playlist;
 
 /*
@@ -16,5 +17,6 @@ use App\Models\Playlist;
 */
 
 Route::resource('/', myMusicController::class);
-Route::get('/loginSpotify', [myMusicController::class, 'loginSpotify']);
-Route::get('/redirectAuthorize', [myMusicController::class, 'redirectAuthorize']);
+Route::get('/loginSpotify', [loginController::class, 'loginSpotify']);
+Route::get('/loggedin', [loginController::class, 'loggedin']);
+Route::get('/redirectAuthorize', [loginController::class, 'redirectAuthorize']);
