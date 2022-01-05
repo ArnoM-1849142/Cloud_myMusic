@@ -261,159 +261,73 @@ $songs = array("lalala", "jodela", "i'm blue");
               <div class="u-container-style u-layout-cell u-right-cell u-size-38 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
                   <p class="u-text u-text-3"> The overview below is a listing of upcoming events where you can go to and listen to the best new music.  This list contains event added by all members of the myMusic community. You too can contribute events here to promote yourself! </p>
-                  <a href="https://nicepage.com/k/portfolio-html-templates" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-2"> add evenement </a>
+                  <a onclick="openEventModal()" id="newEvBtn" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-2"> add evenement </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
 
 
         <!-- list repeater with evenements inside -->
 
         <div class="u-list u-list-1">
-          <div class="u-repeater u-repeater-1">
-
-        <!-- evenement 1 -->
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-1" data-image-width="2000" data-image-height="1333">
-            <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-1"> <img src="{{asset('assets/images/myMusic2.png')}}" alt=""></span>
-                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-1">
-                  <div class="u-container-layout u-container-layout-4">
-                    <h3 class="u-text u-text-default u-text-3">Title</h3>
-                  </div>
-                </div>
-                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-1"></div>
-                <h5 class="u-text u-text-default u-text-4">date</h5>
-                <h5 class="u-text u-text-default u-text-5">Location</h5>
-                <p class="u-text u-text-default u-text-6">Description:&nbsp;<br>Click to select the text box. Click again or double click to start editing the text.
-                </p>
-              </div>
-            </div>
-
-        <!-- evenement 2 -->            
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-2" data-image-width="2000" data-image-height="1333">
-              <div class="u-container-layout u-similar-container u-container-layout-3"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-2"><img src="{{asset('assets/images/myMusic2.png')}}" alt=""></span>
-                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-2">
-                  <div class="u-container-layout u-container-layout-6">
-                    <h3 class="u-text u-text-default u-text-7">Sample Headline</h3>
-                  </div>
-                </div>
-                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-2"></div>
-                <h5 class="u-text u-text-default u-text-8">Sample Headline</h5>
-                <h5 class="u-text u-text-default u-text-9">date</h5>
-                <p class="u-text u-text-default u-text-10">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-              </div>
-            </div>
-
-        <!-- evenement 3 --> <!--
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-3" data-image-width="2000" data-image-height="1333">
-              <div class="u-container-layout u-similar-container u-container-layout-7"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-3"><img src="images/myMusic2.png" alt=""></span>
-                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-3">
-                  <div class="u-container-layout u-container-layout-8">
-                    <h3 class="u-text u-text-default u-text-11">Sample Headline</h3>
-                  </div>
-                </div>
-                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-3"></div>
-                <h5 class="u-text u-text-default u-text-12">Sample Headline</h5>
-                <h5 class="u-text u-text-default u-text-13">date</h5>
-                <p class="u-text u-text-default u-text-14">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-              </div>
-            </div> -->
-            
-        <!-- evenement 4 -->            
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-4" data-image-width="2000" data-image-height="1333">
-              <div class="u-container-layout u-similar-container u-container-layout-9"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-4"><img src="images/myMusic2.png" alt=""></span>
-                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-4">
-                  <div class="u-container-layout u-container-layout-10">
-                    <h3 class="u-text u-text-default u-text-15">Sample Headline</h3>
-                  </div>
-                </div>
-                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-4"></div>
-                <h5 class="u-text u-text-default u-text-16">Sample Headline</h5>
-                <h5 class="u-text u-text-default u-text-17">date</h5>
-                <p class="u-text u-text-default u-text-18">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-              </div>
-            </div>
-
-        <!-- evenement 5 -->
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-5" data-image-width="2000" data-image-height="1333">
-              <div class="u-container-layout u-similar-container u-container-layout-11"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-5"><img src="images/myMusic2.png" alt=""></span>
-                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-5">
-                  <div class="u-container-layout u-container-layout-12">
-                    <h3 class="u-text u-text-default u-text-19">Sample Headline</h3>
-                  </div>
-                </div>           
-                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-5"></div>
-                <h5 class="u-text u-text-default u-text-20">Sample Headline</h5>
-                <h5 class="u-text u-text-default u-text-21">date</h5>
-                <p class="u-text u-text-default u-text-22">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-              </div>
-            </div>
-
-        <!-- evenement 6 -->
-            <div class="u-container-style u-image u-list-item u-repeater-item u-shading u-image-6" data-image-width="2000" data-image-height="1333">
-              <div class="u-container-layout u-similar-container u-container-layout-13"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-6"><img src="images/myMusic2.png" alt=""></span>
-                <div class="u-container-style u-expanded-width u-group u-opacity u-opacity-50 u-palette-1-base u-shape-rectangle u-group-6">
-                  <div class="u-container-layout u-container-layout-14">
-                    <h3 class="u-text u-text-default u-text-23">Sample Headline</h3>
-                  </div>
-                </div>
-                <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-6"></div>
-                <h5 class="u-text u-text-default u-text-24">Sample Headline</h5>
-                <h5 class="u-text u-text-default u-text-25">date</h5>
-                <p class="u-text u-text-default u-text-26">Sample text. Click to select the text box. Click again or double click to start editing the text.</p>
-              </div>
-            </div>
-
-
-
+          <div class="u-repeater u-repeater-1" id="evenement-repeater">
           </div>
         </div>
-        <!-- old
-        <div class="u-expanded-width u-gallery u-layout-grid u-lightbox u-show-text-on-hover u-gallery-1">
-          <div class="u-gallery-inner u-gallery-inner-1">
-            <div class="u-effect-fade u-gallery-item">
-              <div class="u-back-slide u-back-slide-1" data-image-width="626" data-image-height="342">
-                <img class="u-back-image u-expanded u-back-image-1" src="{{asset('assets/images/drummer-plays-drums_169016-5585.jpg')}}">
-              </div>
-              <div class="u-over-slide u-shading u-over-slide-1">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-            <div class="u-effect-fade u-gallery-item">
-              <div class="u-back-slide u-back-slide-2" data-image-width="626" data-image-height="417">
-                <img class="u-back-image u-expanded u-back-image-2" src="{{asset('assets/images/man-plays-drums-background-colored-lights_169016-3427.jpg')}}">
-              </div>
-              <div class="u-over-slide u-shading u-over-slide-2">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-            <div class="u-effect-fade u-gallery-item">
-              <div class="u-back-slide u-back-slide-3" data-image-width="626" data-image-height="417">
-                <img class="u-back-image u-expanded u-back-image-3" src="{{asset('assets/images/people-raising-hands-concert_249578-737.jpg')}}">
-              </div>
-              <div class="u-over-slide u-shading u-over-slide-3">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-            <div class="u-effect-fade u-gallery-item u-gallery-item-4">
-              <div class="u-back-slide u-back-slide-4" data-image-width="626" data-image-height="417">
-                <img class="u-back-image u-expanded u-back-image-4" src="{{asset('assets/images/silhouette-young-lady-crowd-during-concert_181624-27673.jpg')}}">
-              </div>
-              <div class="u-over-slide u-shading u-over-slide-4">
-                <h3 class="u-gallery-heading"></h3>
-                <p class="u-gallery-text"></p>
-              </div>
-            </div>
-          </div>
-        </div>
-        -->
       </div>
     </section>
+
+        <!-- The Modal -->
+    <div id="newEventModal" class="modal">
+      <!-- Modal content --> 
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
+        <div class="modal-background">
+          <div class="u-container-layout u-container-layout-1">
+                  <h1 class="u-text u-text-default u-text-palette-1-base u-text-1 bold-text">Add your event to promote your music group!</h1>
+                  <h3 class="u-text u-text-default u-text-2">When creating this evenement, it will be added to our list of events what everyone can see on our myMusic page.</h3>
+                  <div class="u-form u-form-1">
+                    <form  class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="form">
+                      <div class="u-form-group u-form-name">
+                        <label for="name-3b9a" class="u-label" wfd-invisible="true">title</label>
+                        <input type="text" placeholder="Enter title of the evenement" id="name-3b9a" name="title" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-1" required="">
+                      </div>
+                      <div class="u-form-date u-form-group u-form-group-2">
+                        <label for="date-6ecd" class="u-label">date</label>
+                        <input type="date" placeholder="MM/DD/YYYY" id="date-6ecd" name="date-1" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-2" required="">
+                      </div>
+                      <div class="u-form-group u-form-partition-factor-2 u-form-group-3">
+                        <label for="text-b90c" class="u-label"> Starting hour</label>
+                        <input type="text" placeholder="Starting hour" id="text-b90c" name="text" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-3" required="required">
+                      </div>
+                      <div class="u-form-group u-form-partition-factor-2 u-form-group-4">
+                        <label for="text-aa65" class="u-label">Ending hour</label>
+                        <input type="text" id="text-aa65" name="text-1" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-4" placeholder="Ending hour">
+                      </div>
+                      <div class="u-form-address u-form-group u-form-group-5">
+                        <label for="address-1814" class="u-label">adress</label>
+                        <input type="text" placeholder="Enter the adress of the evenement" id="address-1814" name="address" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-5" required="">
+                      </div>
+                      <div class="u-form-group u-form-message">
+                        <label for="message-3b9a" class="u-label" wfd-invisible="true">Description</label>
+                        <textarea placeholder="Descripe your evenement" rows="4" cols="50" id="message-3b9a" name="message" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-6" required=""></textarea>
+                      </div>
+                      <div class="u-form-group u-form-submit">
+                        <a  onclick = "createNewEvenement()" href="#" class="u-active-palette-1-light-1 u-border-1 u-border-white u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-11 u-text-body-alt-color u-btn-1">Submit</a>
+                        <input   type="submit" value="submit" class="u-form-control-hidden" wfd-invisible="true">
+                      </div>
+                      <div class="u-form-send-message u-form-send-success" wfd-invisible="true"> Thank you! Your message has been sent. </div>
+                      <div class="u-form-send-error u-form-send-message" wfd-invisible="true"> Unable to send your message. Please fix errors then try again. </div>
+                      <input  type="hidden" value="" name="recaptchaResponse" wfd-invisible="true">
+                    </form>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+    </div>
+
+    <script class="u-script" type="text/javascript" src="{{asset('assets/js/evenements.js')}}" ></script>
 
 
 
@@ -422,7 +336,7 @@ $songs = array("lalala", "jodela", "i'm blue");
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-border-1 u-border-grey-25 u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
-            <h3 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-1-base u-text-1">Contact Info</h3>
+            <h3 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-1-base u-text-1" >Contact Info</h3>
             <a href="https://nicepage.com/website-design" class="u-active-none u-btn u-button-style u-hover-none u-none u-text-hover-palette-1-base u-btn-1"><span class="u-icon u-text-palette-1-base"><svg class="u-svg-content" viewBox="0 0 241.73 241.73" x="0px" y="0px" style="width: 1em; height: 1em;"><g><path style="fill:currentColor;" d="M234.771,181.213l-34.938-34.953c-4.692-4.668-10.975-7.24-17.689-7.24   c-6.987,0-13.584,2.751-18.572,7.742l-13.6,13.597c-10.568-5.874-24.614-13.953-39.197-28.536   c-14.566-14.571-22.646-28.576-28.55-39.201l13.613-13.603c10.121-10.142,10.328-26.413,0.463-36.269L61.37,7.818   c-4.679-4.692-10.962-7.276-17.693-7.276c-6.831,0-13.293,2.63-18.252,7.417c-3,2.416-18.055,15.706-23.666,43.114   c-7.856,38.363,10.194,75.274,62.302,127.403c58.209,58.191,107.902,62.714,121.746,62.714c2.882,0,4.621-0.178,5.085-0.232   c27.147-3.182,36.867-15.238,43.964-24.041C244.052,205.508,244.02,190.496,234.771,181.213z M223.178,207.502   c-6.671,8.274-12.971,16.088-34.031,18.557c-0.011,0.001-1.163,0.13-3.34,0.13c-12.386,0-57.008-4.206-111.139-58.32   C26.615,119.796,9.749,86.829,16.454,54.081c4.894-23.906,17.887-34.067,18.392-34.453l0.448-0.331l0.393-0.394   c2.169-2.167,5.006-3.361,7.989-3.361c2.716,0,5.228,1.018,7.08,2.876l34.939,34.94c4.02,4.016,3.806,10.774-0.471,15.06   L69.829,83.8l-0.253,0.265c-4.012,4.419-3.54,10.391-1.33,14.28c6.377,11.508,15.112,27.269,31.92,44.082   c16.752,16.752,32.49,25.48,43.966,31.845c1.149,0.645,3.521,1.727,6.49,1.727c3.506,0,6.725-1.484,9.108-4.189l14.448-14.444   c2.157-2.158,4.985-3.347,7.964-3.347c2.722,0,5.247,1.021,7.095,2.859l34.915,34.93   C228.587,196.259,226.756,203.064,223.178,207.502z"></path><path style="fill:currentColor;" d="M146.447,37.293c12.887,1.483,28.061,9.289,38.657,19.886c10.695,10.695,18.52,26.023,19.933,39.05   c0.417,3.843,3.667,6.691,7.447,6.691c0.27,0,0.544-0.015,0.818-0.044c4.118-0.447,7.094-4.147,6.647-8.265   c-1.787-16.467-11.075-34.874-24.238-48.038c-13.04-13.041-31.259-22.306-47.549-24.181c-4.113-0.477-7.834,2.479-8.308,6.593   C139.38,33.099,142.331,36.819,146.447,37.293z"></path><path style="fill:currentColor;" d="M139.44,68.711c6.97,0.803,16.616,5.973,22.935,12.292c6.373,6.374,11.553,16.112,12.316,23.157   c0.417,3.844,3.667,6.692,7.447,6.692c0.27,0,0.543-0.015,0.817-0.044c4.118-0.447,7.095-4.147,6.648-8.265   c-1.304-12.028-9.289-24.813-16.623-32.147c-7.268-7.269-19.928-15.216-31.825-16.587c-4.119-0.479-7.835,2.478-8.309,6.592   C132.373,64.516,135.325,68.237,139.44,68.711z"></path>
 </g></svg><img></span>&nbsp;+1 (234) 567-8910
             </a>
@@ -482,6 +396,7 @@ $songs = array("lalala", "jodela", "i'm blue");
 
 <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/jquerry.js') }}" defer=""></script>
 <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/nicepage.js') }}" defer=""></script>
+
 
 
 <script type="application/ld+json">{

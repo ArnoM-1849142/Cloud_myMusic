@@ -1476,6 +1476,16 @@
   }
 }
 
+.modal-background{
+  padding: 5px 10px 15px 20px;
+  background-color: rgba(185, 136, 3, 0.959);
+  border-radius: 25px;
+}
+
+.bold-text{
+  font-weight: bold;
+}
+
 @media (max-width: 575px) {
   .u-section-6 .u-text-1 {
     font-size: 3rem;
@@ -1484,14 +1494,13 @@
   .u-section-6 .u-list-1 {
     width: 340px;
   }
-
-
   
+} 
 
 
 
-  
-} .u-section-7 {
+
+.u-section-7 {
   background-image: url("images/dddd-min.jpg");
   background-position: 50% 50%;
 }
