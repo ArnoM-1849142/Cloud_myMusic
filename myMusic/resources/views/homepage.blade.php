@@ -17,7 +17,7 @@ $songs = array("lalala", "jodela", "i'm blue");
   @endisset
 
   @isset($refreshToken)
-    refresh_token = {!! json_encode($refreshToken) !!}
+    refresh_token = {!! json_encode($refreshToken) !!};
     localStorage.setItem("refresh_token", refresh_token);
   @endisset
 </script>
