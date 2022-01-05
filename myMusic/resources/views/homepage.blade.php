@@ -73,7 +73,8 @@ $songs = array("lalala", "jodela", "i'm blue");
 <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
 <link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css')}}" />
 
-    <!-- section 1 -->  
+   <!--  
+     section 1  
      <section class="u-align-center u-clearfix u-image u-section-1" id="sec-9b1f" data-image-width="1527" data-image-height="1080">
       <div class="u-clearfix u-sheet u-sheet-1s">
         <img class="u-image u-image-contain u-image-default u-image-1" src="{{asset('assets/images/myMusic.png')}}" alt="" data-image-width="349" data-image-height="302">
@@ -86,7 +87,7 @@ $songs = array("lalala", "jodela", "i'm blue");
         </div>
         <img class="u-expanded-width-sm u-expanded-width-xs u-image u-image-contain u-image-2" src="{{asset('assets/images/dssdsd-min.png')}}" data-image-width="1200" data-image-height="917">
       </div>
-    </section>
+    </section> -->
 
      <!-- section 2 -->
      <section class="u-clearfix u-palette-1-base u-section-2" id="carousel_0536">
