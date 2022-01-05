@@ -16,7 +16,8 @@ use App\Models\Playlist;
 |
 */
 
-Route::resource('/', myMusicController::class);
+Route::get('/', [myMusicController::class, 'index']);
+Route::get('/lyrics', [myMusicController::class, 'showLyricsPage']);
 Route::get('/loginSpotify', [loginController::class, 'loginSpotify']);
 Route::get('/loggedin', [loginController::class, 'loggedin']);
 Route::get('/redirectAuthorize', [loginController::class, 'redirectAuthorize']);

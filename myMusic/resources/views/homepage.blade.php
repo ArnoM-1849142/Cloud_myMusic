@@ -9,6 +9,7 @@ $songs = array("lalala", "jodela", "i'm blue");
  @section('content')
 
 <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/myMusic.js') }}"></script>
+<script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/spotifyAPI.js') }}"></script>
 
 
  <!--<img id="soundBtn" src="{{asset('assets/images/soundicon.png')}}" width="35" height="35" style="position: fixed;  z-index: 999; top: 20px;  right: 20px; "/>-->
@@ -368,13 +369,7 @@ $songs = array("lalala", "jodela", "i'm blue");
 @endsection
 
 @section('script')
-<!-- <script class="u-script" type="text/javascript" src="resources/js/soundsettings.js" ></script> 
- <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
 
-<<<<<<< HEAD
-<script class="u-script" type="text/javascript" src="{{asset('assets/jquery.js')}}" defer=""></script>
-<script class="u-script" type="text/javascript" src="{{asset('assets/nicepage.js')}}" defer=""></script>-->
-=======
 <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/jquerry.js') }}" defer=""></script>
 <script class="u-script" type="text/javascript" src="{{ URL::asset('assets/js/nicepage.js') }}" defer=""></script>
 >>>>>>> main

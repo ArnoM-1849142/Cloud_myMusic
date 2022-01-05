@@ -15,8 +15,18 @@ class myMusicController extends Controller
      *
      * @return \Illuminate\Http\Response hompage html page
      */
-    public function index(Request $request){
+    public function index(){
         return view("homepage");
+    }
+
+    /**
+     * Display the page for lyric searching and censoring.
+     *
+     * @param \Illuminate\Http\Request 
+     * @return \Illuminate\Http\Response lyrics html page
+     */
+    public function showLyricsPage(Request $request){
+        return view("lyricsPage");
     }
     
 }

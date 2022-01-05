@@ -1,14 +1,7 @@
 const SOUNDSETTINGS = "http://127.0.0.1:8000/api/soundsettings/";
 const SOUNDSETTINGSSPECIFIC = "http://127.0.0.1:8000/api/soundsettings/{id}"
 
-var userInfo = null;
 
-var access_token = localStorage.getItem("access_token");
-if (access_token !== null){
-  initializeUser(access_token);
-} else {
-  window.location.replace("/loginSpotify");  //redirect to login
-}
 
 // Get the modal
 var modal = document.getElementById("myModal");
@@ -43,15 +36,7 @@ function setData(data){
   bass.value = slidersdata[0].bass;
 }
 
-async function initializeUser(){
-  await getSpotifyUserinfo(access_token);
-  setUserInfoInHeader();
-}
 
-function setUserInfoInHeader(){
-  let userInfoBlock = document.getElementById("user-info");
-  userInfoBlock.innerHTML = userInfo.display_name;
-}
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
@@ -96,7 +81,7 @@ async function saveSoundsettings(){
   {
     data = {
       id: userInfo.id,
-      volume: bass.value,
+      volume: volume.value,
       treble: treble.value,
       mid: mid.value,
       bass: bass.value
@@ -112,7 +97,7 @@ async function saveSoundsettings(){
   }
   else {                                            // if user already has soundsettings, do PUT
     data = {
-      volume: bass.value,
+      volume: volume.value,
       treble: treble.value,
       mid: mid.value,
       bass: bass.value
@@ -129,24 +114,6 @@ async function saveSoundsettings(){
   }
   
 }
-
-async function getSpotifyUserinfo(access_token){ 
-  //if userInfo not previously fetched, get from API
-  if (userInfo === null){
-    userInfo = await fetch("https://api.spotify.com/v1/me", {
-    method: "GET", 
-    headers: {'Content-Type': 'application/json',
-              'Authorization': 'Bearer ' + access_token},
-    }).then(response => response.json())
-    .then(data => {return data;})
-    .catch(error => {
-      alert("login failed, please try again. Error = " + error);
-      window.location.replace("/loginSpotify");  //redirect to login
-    });
-  }
-  return userInfo;
-}
-
 
 // update textbox for slidervalues
 volume.oninput = function() {
