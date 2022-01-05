@@ -22,6 +22,36 @@
   height: 120px;            /* Footer height */
 }
 
+.header{
+  height: 100px;
+  box-shadow: 0px 0px 3px 3px black;
+  z-index: 10;
+  position: sticky;
+  top: 0px;
+  background-color: #292870;
+}
+
+.header-parent{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.header-title{
+  cursor: pointer;
+  color: white;
+}
+
+.user-parent{
+  margin-left: auto;
+  margin-right: 0;
+  border-radius: 5px;
+}
+
 .button{
   background-image: none;
   border-style: none;

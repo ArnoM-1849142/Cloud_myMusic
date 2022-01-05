@@ -5,7 +5,7 @@ var userInfo = null;
 
 var access_token = localStorage.getItem("access_token");
 if (access_token !== null){
-  getSpotifyUserinfo(access_token);
+  initializeUser(access_token);
 } else {
   window.location.replace("/loginSpotify");  //redirect to login
 }
@@ -41,6 +41,16 @@ function setData(data){
   treble.value = slidersdata[0].treble;
   mid.value = slidersdata[0].mid;
   bass.value = slidersdata[0].bass;
+}
+
+async function initializeUser(){
+  await getSpotifyUserinfo(access_token);
+  setUserInfoInHeader();
+}
+
+function setUserInfoInHeader(){
+  let userInfoBlock = document.getElementById("user-info");
+  userInfoBlock.innerHTML = userInfo.display_name;
 }
 
 // When the user clicks on <span> (x), close the modal
@@ -128,7 +138,11 @@ async function getSpotifyUserinfo(access_token){
     headers: {'Content-Type': 'application/json',
               'Authorization': 'Bearer ' + access_token},
     }).then(response => response.json())
-    .then(data => {return data;});
+    .then(data => {return data;})
+    .catch(error => {
+      alert("login failed, please try again. Error = " + error);
+      window.location.replace("/loginSpotify");  //redirect to login
+    });
   }
   return userInfo;
 }

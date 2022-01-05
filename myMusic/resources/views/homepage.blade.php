@@ -71,7 +71,7 @@ $songs = array("lalala", "jodela", "i'm blue");
 
 
 <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
-<link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css') }}" />
+<link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css')}}" />
 
     <!-- section 1 -->  
      <section class="u-align-center u-clearfix u-image u-section-1" id="sec-9b1f" data-image-width="1527" data-image-height="1080">
@@ -99,16 +99,7 @@ $songs = array("lalala", "jodela", "i'm blue");
                   <h3 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Krijg afspeelijsten aan de hand van gekozen sfeer</h3>
                 
                   <script> refreshPlaylists() </script>
-                  <!-- liedjes overzicht 
-                  @foreach ($songs as $id)
-                  <div class="u-container-layout u-similar-container u-container-layout-2">
-                          <img class="u-image u-image-circle u-image-1" src="{{asset('assets/images/f2d4860e6f52543c49d6d7404cddf014f5a237e81416813936c182c19c6b3dbb23e5f6cf53ca08b3ba15a4ccb63c33dc94e889c943d69deebaf288_1280.jpg')}}" alt="" data-image-width="1280" data-image-height="1024">
-                          <h4 class="u-text u-text-default u-text-2">Artist: <br>
-                          </h4>
-                          <h3 class="u-text u-text-default u-text-3">Song: {{$id}} </h3>     
-                        </div>
-                  @endforeach
-                  -->
+            
                 </div>
               </div>
               <div class="u-align-left u-container-style u-layout-cell u-size-30 u-layout-cell-2">
