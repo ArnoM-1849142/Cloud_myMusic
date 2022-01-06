@@ -11,7 +11,7 @@
 
 
  <!--<img id="soundBtn" src="{{asset('assets/images/soundicon.png')}}" width="35" height="35" style="position: fixed;  z-index: 999; top: 20px;  right: 20px; "/>-->
- <div style="height: 50px; position: fixed;  z-index: 999; top: 25px;  right: 25px; ">
+ <div onclick="openSoundSettings()" style="height: 50px; position: fixed;  z-index: 999; top: 25px;  right: 25px; ">
   <svg id="soundBtn" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="100%" viewBox="0 0 104 80" version="1.1">
       <desc>Sound button</desc>
       <defs/>
