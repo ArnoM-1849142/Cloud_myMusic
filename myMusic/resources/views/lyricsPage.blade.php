@@ -72,9 +72,31 @@
   </div>
 </div>
 
-
 <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
 <link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css')}}" />
+
+<div class="u-clearfix u-sheet u-sheet-1">      
+    <div class="search-box">
+        <div class="text-padded" style="display: flex; width: 100%">
+            <div style="width: 50%;">
+                <div style="display: flex; flex-direction:column; width: fit-content;">
+                    <h3 class="u-text u-text-default u-text-palette-3-base u-text-8">Search a song!</h3>
+                    <div class="u-border-10 u-border-palette-3-base u-line u-line-horizontal u-line-1" style="width: auto;"></div>
+                </div>
+                <p class="u-text u-text-9">Search a song by its title. This will return a list of songs.
+                        You will than be able to select a song and look at its lyrics (censored/uncensored)
+                </p>
+            </div>
+            <div id="track-input-container">
+                <div style="width: 400px; bottom:0px; right:0px; position:absolute; margin-bottom: 20px;">
+                    <input type="text" id="trackInput" name="track" value="enter a track title" minlength="4" style="color: black; width:100%;">
+                    <button onclick="getSongsByTitle()" style="margin-bottom:0px; margin: top 10px;" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1 button">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 @endsection

@@ -8,6 +8,7 @@ const PLAYER = "https://api.spotify.com/v1/me/player";
 const TRACKS = "https://api.spotify.com/v1/playlists/{{PlaylistId}}/tracks";
 const CURRENTLYPLAYING = "https://api.spotify.com/v1/me/player/currently-playing";
 const SHUFFLE = "https://api.spotify.com/v1/me/player/shuffle";
+const TRACKSBYTITLE = "https://api.spotify.com/v1/search";
 
 function refreshPlaylists(){
     callApi( "GET", PLAYLISTS, null, handlePlaylistsResponse );
@@ -90,6 +91,26 @@ function handleTracksResponse(){
     }
     else if ( this.status == 401 ){
         refreshAccessToken()
+    }
+    else {
+        console.log(this.responseText);
+        alert(this.responseText);
+    }
+}
+
+function getSongsByTitle(){
+    trackTitle = document.getElementById("trackInput").value;
+    url = TRACKSBYTITLE + "?q=track:" + trackTitle + "&type=track"
+    callApi("GET", url, null, handleSongsResponse)
+}
+
+function handleSongsResponse(){
+    if (this.status == 200){
+        var data = JSON.parse(this.responseText);
+        console.log(data);
+    }
+    else if (this.status == 401){
+        refreshAccessToken();
     }
     else {
         console.log(this.responseText);

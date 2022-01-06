@@ -25,7 +25,13 @@ if (access_token !== null){
 }
 
 async function initializeUser(){
-    await getSpotifyUserinfo(access_token);
+    userInfo = await getSpotifyUserinfo(access_token);
+    if (userInfo.error != undefined) {
+        if (userInfo.error.status>299){
+            alert("login failed, please try again. Error = " + error);
+            window.location.replace("/loginSpotify");  //redirect to login
+        }
+    }
     setUserInfoInHeader();
 }
 
@@ -50,3 +56,4 @@ async function getSpotifyUserinfo(access_token){
     }
     return userInfo;
 }
+
