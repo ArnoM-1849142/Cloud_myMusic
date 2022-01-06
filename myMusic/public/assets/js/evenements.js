@@ -23,7 +23,7 @@ evenementrepeater = document.getElementById('evenement-repeater');
 
 
 const showEvenements = async () => {
-    const response = await fetch('https://mymusicpythonservice.herokuapp.com/Evenements');
+    const response = await fetch('https://mymusicpythonservice.herokuapp.com/Events');
     const json = await response.json();
     console.log(json);
     showEvents(json);
@@ -62,7 +62,7 @@ function createNewEvenement(){
           "ending": endh.value,
           }
 
-      fetch('https://mymusicpythonservice.herokuapp.com/Evenements', {
+      fetch('https://mymusicpythonservice.herokuapp.com/Events', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -118,7 +118,7 @@ function showDetail(event_id){
   alert("tempEventId:  " + tempEventId);
   document.getElementById("submitEventBtn").style.display = "none";
   document.getElementById("editEventBtn").style.display = "block";
-  fetch('https://mymusicpythonservice.herokuapp.com/Evenement/'+ event_id)
+  fetch('https://mymusicpythonservice.herokuapp.com/Event/'+ event_id)
     .then(response => response.json())
     .then(data => getData(data));
 }
@@ -138,7 +138,7 @@ function editEvenement(){
           "ending": endh.value,
           }
 
-      fetch('https://mymusicpythonservice.herokuapp.com/Evenement/'+ tempEventId, {
+      fetch('https://mymusicpythonservice.herokuapp.com/Event/'+ tempEventId, {
       method: 'PUT',
       headers: {
         'Accept': 'application/json',
@@ -156,7 +156,7 @@ function editEvenement(){
 
 function deleteEvenement(){
   alert("selected event: " + deleteSelector.value);
-  fetch('https://mymusicpythonservice.herokuapp.com/Evenement/'+deleteSelector.value, {
+  fetch('https://mymusicpythonservice.herokuapp.com/Event/'+deleteSelector.value, {
     method: 'DELETE'
   })
   showEvenements();
