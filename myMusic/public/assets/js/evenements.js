@@ -25,20 +25,11 @@ evenementrepeater = document.getElementById('evenement-repeater');
 const showEvenements = async () => {
     const response = await fetch('https://mymusicpythonservice.herokuapp.com/Evenements');
     const json = await response.json();
-    showEvents(json);
     console.log(json);
+    showEvents(json);
 }
 
 showEvenements();
-
-/*
-function showEvenements(){
-    fetch('https://mymusicpythonservice.herokuapp.com/Evenements')
-    .then(response => response.json())
-    .then(data => showEvents(data));
-    alert("data:" + data)
-   
-*/
 
 var newEventform = document.getElementById("newEventform");
 
@@ -48,10 +39,6 @@ function openEventForum(){
   document.getElementById("editEventBtn").style.display = "none";
 }
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
 
 var title = document.getElementById("name-3b9a");
 var date = document.getElementById("date-6ecd");
@@ -90,6 +77,7 @@ function createNewEvenement(){
   }
 }
 
+var deleteSelector = document.getElementById("deleteSelector");
 
 function showEvents(data){
   evenementrepeater.innerHTML= "";
@@ -104,6 +92,12 @@ function showEvents(data){
             value['ending'],
           );
       }
+
+  // add elements to the selectionbox in the delete box
+  for (const [key, value] of Object.entries(data)) {
+    deleteSelector.innerHTML += "<option style=\"color:gray\" name='name' value=" +'"'+ value['id'] + '"' +" >" + value['title'] + "</option>";
+  }
+
 }
 
 function getData(data){
@@ -157,4 +151,13 @@ function editEvenement(){
 
     showEvenements();
   }
+}
+
+
+function deleteEvenement(){
+  alert("selected event: " + deleteSelector.value);
+  fetch('https://mymusicpythonservice.herokuapp.com/Evenement/'+deleteSelector.value, {
+    method: 'DELETE'
+  })
+  showEvenements();
 }

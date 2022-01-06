@@ -142,7 +142,6 @@ $songs = array("lalala", "jodela", "i'm blue");
                       <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
                       <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                       <input type="hidden" value="" name="recaptchaResponse">
-
                   </div>
                 </div>
               </div>
@@ -266,73 +265,90 @@ $songs = array("lalala", "jodela", "i'm blue");
         </div>
 
 
-        <!-- The forum -->
-        <div id="newEventform" style="z-index: 2; margin-left: auto;
-    margin-right: auto;  display: none;" >
-      <!-- Forum content --> 
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1" style="z-index: 5;">
-        <div class="forum-background">
-          <div class="u-container-layout u-container-layout-1">
-                  <h1 class="u-text u-text-default u-text-palette-1-base u-text-1 bold-text">Add your event to promote your music group!</h1>
-                  <h3 class="u-text u-text-default u-text-2">When creating this evenement, it will be added to our list of events what everyone can see on our myMusic page.</h3>
-                  <div class="u-form u-form-1">
-                    <form  class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="form">
-                      <div class="u-form-group u-form-name">
-                        <label for="name-3b9a" class="u-label" wfd-invisible="true">title</label>
-                        <input type="text" placeholder="Enter title of the evenement" id="name-3b9a" name="title" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-1" required="">
-                      </div>
-                      <div class="u-form-date u-form-group u-form-group-2">
-                        <label for="date-6ecd" class="u-label">date</label>
-                        <input type="date" placeholder="MM/DD/YYYY" id="date-6ecd" name="date-1" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-2" required="">
-                      </div>
-                      <div class="u-form-group u-form-partition-factor-2 u-form-group-3">
-                        <label for="text-b90c" class="u-label"> Starting hour</label>
-                        <input type="text" placeholder="Starting hour" id="text-b90c" name="text" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-3" required="required">
-                      </div>
-                      <div class="u-form-group u-form-partition-factor-2 u-form-group-4">
-                        <label for="text-aa65" class="u-label">Ending hour</label>
-                        <input type="text" id="text-aa65" name="text-1" id="text-aa65"  class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-4" placeholder="Ending hour">
-                      </div>
-                      <div class="u-form-address u-form-group u-form-group-5">
-                        <label for="address-1814" class="u-label">adress</label>
-                        <input type="text" placeholder="Enter the adress of the evenement" id="address-1814" name="address" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-5" required="">
-                      </div>
-                      <div class="u-form-group u-form-message">
-                        <label for="message-3b9a" class="u-label" wfd-invisible="true">Description</label>
-                        <textarea placeholder="Descripe your evenement" rows="4" cols="50" id="message-3b9a" name="message" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-6" required=""></textarea>
-                        
-                      </div><div class="float-container">
-                        <div class="float-child">
-                        <div class="u-form-group u-form-submit" >
-                                                <a id="submitEventBtn" style="display: block" onclick = "createNewEvenement()" href="#" class="u-active-palette-1-light-1 u-border-1 u-border-white u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-11 u-text-body-alt-color u-btn-1">Submit</a>
-
-                        <div class="float-child">
-                        <div class="u-form-group u-form-submit">
-                                                <a id="editEventBtn" style="display: none" onclick = "editEvenement()" href="#" class="u-active-palette-1-light-1 u-border-1 u-border-white u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-11 u-text-body-alt-color u-btn-1">Edit Event</a>
+          <!-- add event forum -->
+      <div style="z-index: 2; margin-left: auto; margin-right: auto;  display: block;" >
+        <div id="newEventform" class="u-clearfix u-sheet u-valign-middle u-sheet-1" style="z-index: 5; display: none;">
+          <div class="forum-background">
+            <div class="u-container-layout u-container-layout-1">
+                    <h1 class="u-text u-text-default u-text-palette-1-base u-text-1 bold-text">Add your event to promote your music group!</h1>
+                    <h3 class="u-text u-text-default u-text-2">When creating this evenement, it will be added to our list of events what everyone can see on our myMusic page.</h3>
+                    <div class="u-form u-form-1">
+                      <form  class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="form">
+                        <div class="u-form-group u-form-name">
+                          <label for="name-3b9a" class="u-label" wfd-invisible="true">title</label>
+                          <input type="text" placeholder="Enter title of the evenement" id="name-3b9a" name="title" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-1" required="">
                         </div>
-                     
-                      </div>
-                      <div class="u-form-send-message u-form-send-success" wfd-invisible="true"> Thank you! Your message has been sent. </div>
-                      <div class="u-form-send-error u-form-send-message" wfd-invisible="true"> Unable to send your message. Please fix errors then try again. </div>
-                      <input  type="hidden" value="" name="recaptchaResponse" wfd-invisible="true">
-                    </form>
+                        <div class="u-form-date u-form-group u-form-group-2">
+                          <label for="date-6ecd" class="u-label">date</label>
+                          <input type="date" placeholder="MM/DD/YYYY" id="date-6ecd" name="date-1" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-2" required="">
+                        </div>
+                        <div class="u-form-group u-form-partition-factor-2 u-form-group-3">
+                          <label for="text-b90c" class="u-label"> Starting hour</label>
+                          <input type="text" placeholder="Starting hour" id="text-b90c" name="text" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-3" required="required">
+                        </div>
+                        <div class="u-form-group u-form-partition-factor-2 u-form-group-4">
+                          <label for="text-aa65" class="u-label">Ending hour</label>
+                          <input type="text" id="text-aa65" name="text-1" id="text-aa65"  class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-4" placeholder="Ending hour">
+                        </div>
+                        <div class="u-form-address u-form-group u-form-group-5">
+                          <label for="address-1814" class="u-label">adress</label>
+                          <input type="text" placeholder="Enter the adress of the evenement" id="address-1814" name="address" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-5" required="">
+                        </div>
+                        <div class="u-form-group u-form-message">
+                          <label for="message-3b9a" class="u-label" wfd-invisible="true">Description</label>
+                          <textarea placeholder="Descripe your evenement" rows="4" cols="50" id="message-3b9a" name="message" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-6" required=""></textarea>
+                        </div><div class="float-container">
+                        <div class="float-child">
+                          <div class="u-form-group u-form-submit" >
+                              <a id="submitEventBtn" style="display: block" onclick = "createNewEvenement()" href="#" class="u-active-palette-1-light-1 u-border-1 u-border-white u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-11 u-text-body-alt-color u-btn-1">Submit</a>
+                          <div class="float-child">
+                          <div class="u-form-group u-form-submit">
+                                <a id="editEventBtn" style="display: none" onclick = "editEvenement()" href="#" class="u-active-palette-1-light-1 u-border-1 u-border-white u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-11 u-text-body-alt-color u-btn-1">Edit Event</a>
+                          </div>
+                        </div>
+                        <div class="u-form-send-message u-form-send-success" wfd-invisible="true"> Thank you! Your message has been sent. </div>
+                        <div class="u-form-send-error u-form-send-message" wfd-invisible="true"> Unable to send your message. Please fix errors then try again. </div>
+                        <input  type="hidden" value="" name="recaptchaResponse" wfd-invisible="true">
+                      </form>
+                    </div>
                   </div>
                 </div>
               </div>
-        </div>
-      </div>
-    </div>
-
-        <div class="u-list u-list-1" id="evenementList" style=" margin-left: auto; margin-right: auto; padding-block-start:50px; display: block">
-          <div class="u-repeater u-repeater-1" id="evenement-repeater">
+            </div>
           </div>
         </div>
-      </div>
+
+    
+         <!-- evenement list -->
+          <div class="u-list u-list-1" id="evenementList" style=" margin-left: auto; margin-right: auto; padding-block-start:50px; display: block;">
+            <div class="u-repeater u-repeater-1" id="evenement-repeater">
+            </div>
+          </div>
+
+          <!-- delete container -->
+          <div class="u-container-style u-gradient u-list-item u-repeater-item u-list-item-2">
+            <div class="u-container-layout u-similar-container u-container-layout-delete">
+              <div class="u-container-style u-grey-50 u-group u-opacity u-opacity-30 u-shape-rectangle u-group-12">
+                <div class="u-container-layout u-container-layout-6"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-2"> <img src="{{asset('assets/images/myMusic2.png')}}" alt=""></span>
+                  <h3 class="u-text u-text-default u-text-9">Delete evenement</h3>
+                  <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-2"></div>
+                  <p class="u-text u-text-14">To show our REST delete function, can in the box an evenement be chosen and deleted from the database</p>
+                    <p></p>
+                    <select id="deleteSelector" style="width: 450px; color:gray;"> <!--onchange="slaapkamerSelect(this.options[this.selectedIndex].value)" -->
+                      <option  name='name' value=" choose evenement "></option>
+                    </select>
+                    <p></p>
+                    <a id="submitEventBtn" style="display: block; float: left;" onclick = "deleteEvenement()" href="#" class="u-active-palette-1-light-1 u-border-1 u-border-white u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-11 u-text-body-alt-color u-btn-1">DELTE EVENT</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
     </section>
 
 
     <script class="u-script" type="text/javascript" src="{{asset('assets/js/evenements.js')}}" ></script>
-
 
 
      <!-- section 7 -->
