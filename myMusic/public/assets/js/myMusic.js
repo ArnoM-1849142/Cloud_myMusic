@@ -17,6 +17,7 @@ if ((access_token === null) || (refresh_token === null)){ //check if tokens wher
 
         alert("please log in to your spotify account");
         window.location.replace("/loginSpotify");
+
     }
 }
 
@@ -122,7 +123,7 @@ function refreshAccessToken(){
     alert("Session expired, please log in again");
     localStorage.removeItem("access_key");
     localStorage.removeItem("refresh_key");
-    window.location.replace("/loginSpotify");
+    //window.location.replace("/loginSpotify");
 }
 
 function callApi(method, url, body, callback){

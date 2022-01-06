@@ -270,7 +270,7 @@ $songs = array("lalala", "jodela", "i'm blue");
               <div class="u-container-style u-layout-cell u-right-cell u-size-38 u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-2">
                   <p class="u-text u-text-3"> The overview below is a listing of upcoming events where you can go to and listen to the best new music.  This list contains event added by all members of the myMusic community. You too can contribute events here to promote yourself! </p>
-                  <a onclick="openEventModal()" id="newEvBtn" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-2"> add evenement </a>
+                  <a onclick="openEventForum()" id="newEvBtn" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-2"> add evenement </a>
                 </div>
               </div>
             </div>
@@ -278,20 +278,12 @@ $songs = array("lalala", "jodela", "i'm blue");
         </div>
 
 
-        <!-- list repeater with evenements inside -->
-
-        <div class="u-list u-list-1">
-          <div class="u-repeater u-repeater-1" id="evenement-repeater">
-          </div>
-        </div>
-      </div>
-    </section>
-
-        <!-- The Modal -->
-    <div id="newEventModal" class="modal">
-      <!-- Modal content --> 
-      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
-        <div class="modal-background">
+        <!-- The forum -->
+        <div id="newEventform" style="z-index: 2; margin-left: auto;
+    margin-right: auto;  display: none;" >
+      <!-- Forum content --> 
+      <div class="u-clearfix u-sheet u-valign-middle u-sheet-1" style="z-index: 5;">
+        <div class="forum-background">
           <div class="u-container-layout u-container-layout-1">
                   <h1 class="u-text u-text-default u-text-palette-1-base u-text-1 bold-text">Add your event to promote your music group!</h1>
                   <h3 class="u-text u-text-default u-text-2">When creating this evenement, it will be added to our list of events what everyone can see on our myMusic page.</h3>
@@ -311,7 +303,7 @@ $songs = array("lalala", "jodela", "i'm blue");
                       </div>
                       <div class="u-form-group u-form-partition-factor-2 u-form-group-4">
                         <label for="text-aa65" class="u-label">Ending hour</label>
-                        <input type="text" id="text-aa65" name="text-1" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-4" placeholder="Ending hour">
+                        <input type="text" id="text-aa65" name="text-1" id="text-aa65"  class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-4" placeholder="Ending hour">
                       </div>
                       <div class="u-form-address u-form-group u-form-group-5">
                         <label for="address-1814" class="u-label">adress</label>
@@ -320,10 +312,17 @@ $songs = array("lalala", "jodela", "i'm blue");
                       <div class="u-form-group u-form-message">
                         <label for="message-3b9a" class="u-label" wfd-invisible="true">Description</label>
                         <textarea placeholder="Descripe your evenement" rows="4" cols="50" id="message-3b9a" name="message" class="u-border-2 u-border-white u-input u-input-rectangle u-radius-16 u-white u-input-6" required=""></textarea>
-                      </div>
-                      <div class="u-form-group u-form-submit">
-                        <a  onclick = "createNewEvenement()" href="#" class="u-active-palette-1-light-1 u-border-1 u-border-white u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-11 u-text-body-alt-color u-btn-1">Submit</a>
-                        <input   type="submit" value="submit" class="u-form-control-hidden" wfd-invisible="true">
+                        
+                      </div><div class="float-container">
+                        <div class="float-child">
+                        <div class="u-form-group u-form-submit" >
+                                                <a id="submitEventBtn" style="display: block" onclick = "createNewEvenement()" href="#" class="u-active-palette-1-light-1 u-border-1 u-border-white u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-11 u-text-body-alt-color u-btn-1">Submit</a>
+
+                        <div class="float-child">
+                        <div class="u-form-group u-form-submit">
+                                                <a id="editEventBtn" style="display: none" onclick = "editEvenement()" href="#" class="u-active-palette-1-light-1 u-border-1 u-border-white u-btn u-btn-round u-btn-submit u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius-11 u-text-body-alt-color u-btn-1">Edit Event</a>
+                        </div>
+                     
                       </div>
                       <div class="u-form-send-message u-form-send-success" wfd-invisible="true"> Thank you! Your message has been sent. </div>
                       <div class="u-form-send-error u-form-send-message" wfd-invisible="true"> Unable to send your message. Please fix errors then try again. </div>
@@ -335,6 +334,14 @@ $songs = array("lalala", "jodela", "i'm blue");
         </div>
       </div>
     </div>
+
+        <div class="u-list u-list-1" id="evenementList" style=" margin-left: auto; margin-right: auto; padding-block-start:50px; display: block">
+          <div class="u-repeater u-repeater-1" id="evenement-repeater">
+          </div>
+        </div>
+      </div>
+    </section>
+
 
     <script class="u-script" type="text/javascript" src="{{asset('assets/js/evenements.js')}}" ></script>
 
@@ -385,9 +392,6 @@ $songs = array("lalala", "jodela", "i'm blue");
                   <a href="#" class="u-btn u-btn-submit u-button-style u-btn-3">Submit</a>
                   <input type="submit" value="submit" class="u-form-control-hidden" wfd-invisible="true">
                 </div>
-                <div class="u-form-send-message u-form-send-success" wfd-invisible="true"> Thank you! Your message has been sent. </div>
-                <div class="u-form-send-error u-form-send-message" wfd-invisible="true"> Unable to send your message. Please fix errors then try again. </div>
-                <input type="hidden" value="" name="recaptchaResponse" wfd-invisible="true">
               </form>
             </div>
           </div>
