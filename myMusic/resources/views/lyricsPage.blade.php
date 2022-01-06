@@ -84,7 +84,7 @@
                     <div class="u-border-10 u-border-palette-3-base u-line u-line-horizontal u-line-1" style="width: auto;"></div>
                 </div>
                 <p class="u-text u-text-9">Search a song by its title. This will return a list of songs.
-                        You will than be able to select a song and look at its lyrics (censored/uncensored)
+                        If you click on a song you will be redirected to a lyrics page and you can censor them if needed. 
                 </p>
             </div>
             <div id="track-input-container">
@@ -96,22 +96,6 @@
         </div>
     </div>
     <div class="search-results-grid" id="search-results-grid">
-      <div class="search-results-card">
-        <img class="u-image u-image-contain u-image-default u-image-1 search-card-image" src="{{asset('assets/images/silhouette-young-lady-crowd-during-concert_181624-27673.jpg')}}" alt="" data-image-width="349" data-image-height="302">
-        <div class="search-results-card-text">
-          <h3>Title of the song</h3>
-          <h4>Artist Names</h4>
-          <h5>duration</h5>
-        </div>
-      </div>
-      <div class="search-results-card">
-        <img class="u-image u-image-contain u-image-default u-image-1 search-card-image" src="{{asset('assets/images/silhouette-young-lady-crowd-during-concert_181624-27673.jpg')}}" alt="" data-image-width="349" data-image-height="302">
-        <div class="search-results-card-text">
-          <h3>Title of the song</h3>
-          <h4>Artist Names</h4>
-          <h5>duration</h5>
-        </div>
-      </div>
     </div>
 </div>
 

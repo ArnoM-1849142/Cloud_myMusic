@@ -104,15 +104,16 @@ function getSongsByTitle(){
     callApi("GET", url, null, handleSongsResponse)
 }
 
-var songslist;
-
 function handleSongsResponse(){
     if (this.status == 200){
         var data = JSON.parse(this.responseText);
         console.log(data);
         let tracks = data.tracks.items;
-        songslist = tracks;
-        setSongsCards(tracks);
+        if (tracks.length === 0){
+            alert("Sorry, no songs were found by that title 😞");
+        } else {
+            setSongsCards(tracks);
+        }
     }
     else if (this.status == 401){
         refreshAccessToken();
