@@ -48,6 +48,11 @@ function openEventForum(){
   document.getElementById("editEventBtn").style.display = "none";
 }
 
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
 var title = document.getElementById("name-3b9a");
 var date = document.getElementById("date-6ecd");
 var description = document.getElementById("message-3b9a");

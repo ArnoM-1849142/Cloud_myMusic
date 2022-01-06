@@ -3,24 +3,24 @@ const SOUNDSETTINGSSPECIFIC = "http://127.0.0.1:8000/api/soundsettings/{id}"
 
 
 
-// Get the modal
-var modal = document.getElementById("myModal");
+// Get the soundsettingsModal
+var soundsettingsModal = document.getElementById("myModal");
 
-// Get the button that opens the modal
+// Get the button that opens the soundsettingsModal
 var soundBtn = document.getElementById("soundBtn");
 
-// Get the <span> element that closes the modal
+// Get the <span> element that closes the soundsettingsModal
 var span = document.getElementsByClassName("close")[0];
 
 var slidersdata;
-// When the user clicks the button, open the modal 
+// When the user clicks the button, open the soundsettingsModal 
 //soundBtn.onclick = async function() {
-//  modal.style.display = "block";
+//  soundsettingsModal.style.display = "block";
 //  let soundsettings = await getSoundsettings();
 //  setData(soundsettings);
 //}
 async function openSoundSettings(){
-  modal.style.display = "block";
+  soundsettingsModal.style.display = "block";
   let soundsettings = await getSoundsettings();
   setData(soundsettings);
 }
@@ -43,15 +43,20 @@ function setData(data){
 
 
 
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> (x), close the soundsettingsModal
 span.onclick = function() {
-  modal.style.display = "none";
+  soundsettingsModal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks anywhere outside of the soundsettingsModal, close it
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
+  if (event.target == soundsettingsModal) {
+    soundsettingsModal.style.display = "none";
+  }
+  else if (typeof modal !== 'undefined') {
+    if (event.target == modal){
+      modal.style.display = "none";
+    }
   }
 }
 

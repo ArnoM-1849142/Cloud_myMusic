@@ -108,6 +108,12 @@ function handleSongsResponse(){
     if (this.status == 200){
         var data = JSON.parse(this.responseText);
         console.log(data);
+        let tracks = data.tracks.items;
+        if (tracks.length === 0){
+            alert("Sorry, no songs were found by that title 😞");
+        } else {
+            setSongsCards(tracks);
+        }
     }
     else if (this.status == 401){
         refreshAccessToken();
@@ -116,6 +122,59 @@ function handleSongsResponse(){
         console.log(this.responseText);
         alert(this.responseText);
     }
+}
+
+function setSongsCards(songslist){
+    grid = document.getElementById("search-results-grid");
+    grid.innerHTML = '';    //remove all existing children
+
+    for (const [key, value] of Object.entries(songslist)){
+        imageref = value.album.images[0].url;
+        title = value.name;
+        artist = value.artists[0].name;
+        album = "Album: " + value.album.name;
+        grid.appendChild(searchResultsCard(imageref, title, artist, album, value.id, value));
+    }
+}
+
+//<div class="search-results-card">
+//        <img class="u-image u-image-contain u-image-default u-image-1 search-card-image" src="{{asset('assets/images/silhouette-young-lady-crowd-during-concert_181624-27673.jpg')}}" alt="" data-image-width="349" data-image-height="302">
+//        <div class="search-results-card-text">
+//          <h3>Title of the song</h3>
+//          <h4>Artist Names</h4>
+//          <h5>album</h5>
+//        </div>
+//      </div>
+function searchResultsCard(imageref, title, artist, addition, id, object){
+    let card = document.createElement("div");
+    card.classList.add("search-results-card");
+    card.id = id;
+    card.value = object;
+
+    let img = document.createElement("img");
+    img.src = imageref;
+    img.classList.add("u-image");
+    img.classList.add("u-image-contain");
+    img.classList.add("u-image-default");
+    img.classList.add("u-image-1");
+    img.classList.add("search-card-image");;
+
+    let textdiv = document.createElement("div");
+    textdiv.classList.add("search-results-card-text");
+
+    let titletext = document.createElement("h3");
+    titletext.innerHTML = title;
+
+    let artisttext = document.createElement("h4");
+    artisttext.innerHTML = artist;
+
+    let additiontext = document.createElement("addition");
+    additiontext.innerHTML = addition;
+
+    textdiv.append(titletext, artisttext, addition);
+    card.append(img, textdiv);
+
+    return card;
 }
 
 function addTrack(item, index){
