@@ -41,6 +41,11 @@ function openEventModal(){
     modal.style.display = "block";
 }
 
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
 var title = document.getElementById("name-3b9a");
 var date = document.getElementById("date-6ecd");
 
