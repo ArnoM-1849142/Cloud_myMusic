@@ -32,11 +32,6 @@ window.onload = function showEvenements(){
 var modal = document.getElementById("newEventModal");
 
 
-var jsoncontect = {"title": "examen IOT",
-"date": "28/041/2022",
-"location": "H-E207",
- "description": "Docent(en) dinges"}
-
 function openEventModal(){
     modal.style.display = "block";
 }

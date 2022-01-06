@@ -91,9 +91,27 @@
                 <div style="width: 400px; bottom:0px; right:0px; position:absolute; margin-bottom: 20px;">
                     <input type="text" id="trackInput" name="track" value="enter a track title" minlength="4" style="color: black; width:100%;">
                     <button onclick="getSongsByTitle()" style="margin-bottom:0px; margin: top 10px;" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1 button">Search</button>
-                </div>
+                  </div>
             </div>
         </div>
+    </div>
+    <div class="search-results-grid" id="search-results-grid">
+      <div class="search-results-card">
+        <img class="u-image u-image-contain u-image-default u-image-1 search-card-image" src="{{asset('assets/images/silhouette-young-lady-crowd-during-concert_181624-27673.jpg')}}" alt="" data-image-width="349" data-image-height="302">
+        <div class="search-results-card-text">
+          <h3>Title of the song</h3>
+          <h4>Artist Names</h4>
+          <h5>duration</h5>
+        </div>
+      </div>
+      <div class="search-results-card">
+        <img class="u-image u-image-contain u-image-default u-image-1 search-card-image" src="{{asset('assets/images/silhouette-young-lady-crowd-during-concert_181624-27673.jpg')}}" alt="" data-image-width="349" data-image-height="302">
+        <div class="search-results-card-text">
+          <h3>Title of the song</h3>
+          <h4>Artist Names</h4>
+          <h5>duration</h5>
+        </div>
+      </div>
     </div>
 </div>
 
