@@ -87,6 +87,22 @@
   padding: 11px 50px 13px 48px;
 }
 
+.search-box{
+  display: flex;
+  margin-top: 10px;
+}
+
+.text-padded{
+  padding-left: 10px;
+}
+
+#track-input-container{
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-left: auto;
+  bottom: 0px;
+}
+
  /* generated code */
 
 .fr-clearfix::after {

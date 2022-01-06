@@ -19,6 +19,16 @@ class loginController extends Controller
         return view("loginSpotify");
     }
 
+    /**
+     * posts client id, secret and the code as recieved by the spotify authentication request
+     * to the spotifyAPI token endpoint to recieve tokens for the user
+     * 
+     * these are then saved in the browser
+     * 
+     * redirects the login page if unsuccesful
+     * 
+     * @return \Illuminate\Http\Response loginSpotify html page
+     */
     public function loggedin(Request $request){
 
         if (isset($_GET['code'])) {
