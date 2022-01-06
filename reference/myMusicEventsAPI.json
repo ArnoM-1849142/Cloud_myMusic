@@ -248,6 +248,191 @@
         }
       },
       "parameters": []
+    },
+    "/Event/{id}": {
+      "get": {
+        "summary": "Your GET endpoint",
+        "tags": [],
+        "responses": {},
+        "operationId": "get-Event-id",
+        "description": "Get the event with the selected id",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "date": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "location": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "description": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "start": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "ending": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "id",
+                  "title",
+                  "date",
+                  "location",
+                  "description",
+                  "start",
+                  "ending"
+                ],
+                "x-examples": {
+                  "example-1": {
+                    "id": 0,
+                    "title": "fruitsapfuif",
+                    "date": "04/01/2022",
+                    "location": "blokbar",
+                    "description": "leuke fuif met veel fruitsap",
+                    "start": "12:00",
+                    "ending": "14:00"
+                  }
+                }
+              },
+              "examples": {
+                "GET-chosen-event-example": {
+                  "value": {
+                    "id": 0,
+                    "title": "fruitsapfuif",
+                    "date": "04/01/2022",
+                    "location": "blokbar",
+                    "description": "leuke fuif met veel fruitsap",
+                    "start": "12:00",
+                    "ending": "14:00"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "Give the id of the wantend Event"
+        }
+      ],
+      "put": {
+        "summary": "",
+        "operationId": "put-Event-id",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Edit event with the chosen parameters, you can change the new details of an event with this request",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "description": "",
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "number"
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "date": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "location": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "description": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "start": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "ending": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                },
+                "required": [
+                  "id",
+                  "title",
+                  "date",
+                  "location",
+                  "description",
+                  "start",
+                  "ending"
+                ],
+                "x-examples": {
+                  "example-1": {
+                    "id": 0,
+                    "title": "fruitsapfuif",
+                    "date": "04/01/2022",
+                    "location": "blokbar",
+                    "description": "leuke fuif met veel fruitsap",
+                    "start": "12:00",
+                    "ending": "14:00"
+                  }
+                }
+              },
+              "examples": {
+                "PUT-chosen-event-example": {
+                  "value": {
+                    "id": 0,
+                    "title": "volwassenfuif",
+                    "date": "04/01/2022",
+                    "location": "Fitlink",
+                    "description": "leuke fuif met veel drinken",
+                    "start": "12:00",
+                    "ending": "14:00"
+                  }
+                }
+              }
+            }
+          },
+          "description": ""
+        }
+      },
+      "delete": {
+        "summary": "",
+        "operationId": "delete-Event-id",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "Delete event in the databse with the chosen id"
+      }
     }
   },
   "components": {
