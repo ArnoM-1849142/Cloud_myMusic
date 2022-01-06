@@ -1,10 +1,8 @@
-window.onload = function() {
+window.addEventListener('load', function (){
     fetch('https://api.kanye.rest')
     .then(response => response.json())
     .then(data => showData(data));
-   
-};
-
+});
 
 var textboxkanyeQuote = document.getElementById("kanyeQuote");
 

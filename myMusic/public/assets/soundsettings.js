@@ -14,7 +14,12 @@ var span = document.getElementsByClassName("close")[0];
 
 var slidersdata;
 // When the user clicks the button, open the modal 
-soundBtn.onclick = async function() {
+//soundBtn.onclick = async function() {
+//  modal.style.display = "block";
+//  let soundsettings = await getSoundsettings();
+//  setData(soundsettings);
+//}
+async function openSoundSettings(){
   modal.style.display = "block";
   let soundsettings = await getSoundsettings();
   setData(soundsettings);
