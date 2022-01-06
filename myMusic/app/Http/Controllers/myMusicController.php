@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\Http;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 
 class myMusicController extends Controller
@@ -16,7 +17,9 @@ class myMusicController extends Controller
      * @return \Illuminate\Http\Response hompage html page
      */
     public function index(){
+
         return view("homepage");
+
     }
 
     /**
@@ -25,8 +28,9 @@ class myMusicController extends Controller
      * @param \Illuminate\Http\Request 
      * @return \Illuminate\Http\Response lyrics html page
      */
-    public function showLyricsPage(Request $request){
+    public function showLyricsPage(){
+
         return view("lyricsPage");
+
     }
-    
 }
