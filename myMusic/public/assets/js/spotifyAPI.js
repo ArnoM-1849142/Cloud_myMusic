@@ -104,11 +104,14 @@ function getSongsByTitle(){
     callApi("GET", url, null, handleSongsResponse)
 }
 
+var songslist;
+
 function handleSongsResponse(){
     if (this.status == 200){
         var data = JSON.parse(this.responseText);
         console.log(data);
         let tracks = data.tracks.items;
+        songslist = tracks;
         if (tracks.length === 0){
             alert("Sorry, no songs were found by that title 😞");
         } else {
@@ -133,7 +136,7 @@ function setSongsCards(songslist){
         title = value.name;
         artist = value.artists[0].name;
         album = "Album: " + value.album.name;
-        grid.appendChild(searchResultsCard(imageref, title, artist, album, value.id, value));
+        grid.appendChild(searchResultsCard(imageref, title, artist, album, value.id, key));
     }
 }
 
@@ -145,11 +148,10 @@ function setSongsCards(songslist){
 //          <h5>album</h5>
 //        </div>
 //      </div>
-function searchResultsCard(imageref, title, artist, addition, id, object){
+function searchResultsCard(imageref, title, artist, addition, id){
     let card = document.createElement("div");
     card.classList.add("search-results-card");
     card.id = id;
-    card.value = object;
 
     let img = document.createElement("img");
     img.src = imageref;
