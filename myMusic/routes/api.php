@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\API\censorItBridgeController;
 use App\Models\Song;
 use App\Models\SoundSettings;
 use App\Http\Controllers\API\SoundSettingsController;
@@ -23,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::Resource('soundsettings', SoundSettingsController::class);
+
+Route::post('/censorIt', [censorItBridgeController::class, 'getCensoredText']);

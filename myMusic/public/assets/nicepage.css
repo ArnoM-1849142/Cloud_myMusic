@@ -170,6 +170,28 @@
   min-width: 119px;
 }
 
+.song-detail-block{
+  margin: 10px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 65% 35%;
+  gap: 20px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.censor-block{
+  margin-top: 20px;
+}
+
+.wordinput{
+  margin: 5px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  height: fit-content;
+  color: black; 
+  width: 45%;
+}
+
  /* generated code */
 
 .fr-clearfix::after {
