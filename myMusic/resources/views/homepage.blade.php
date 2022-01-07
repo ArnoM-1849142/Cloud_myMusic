@@ -298,10 +298,10 @@ $songs = array("lalala", "jodela", "i'm blue");
           <!-- add event forum -->
       <div style="z-index: 2; margin-left: auto; margin-right: auto;  display: block;" >
         <div id="newEventform" class="u-clearfix u-sheet u-valign-middle u-sheet-1" style="z-index: 5; display: none;">
-          <div class="forum-background">
+          <div class="forum-background" style="padding-block-end: 100px;">
             <div class="u-container-layout u-container-layout-1">
-                    <h1 class="u-text u-text-default u-text-palette-1-base u-text-1 bold-text">Add your event to promote your music group!</h1>
-                    <h3 class="u-text u-text-default u-text-2">When creating this evenement, it will be added to our list of events what everyone can see on our myMusic page.</h3>
+                    <h1 id="forumTitle" class="u-text u-text-default u-text-palette-1-base u-text-1 bold-text">Add your event to promote your music group!</h1>
+                    <h3 id="forumDescrp" class="u-text u-text-default u-text-2">When creating this evenement, it will be added to our list of events what everyone can see on our myMusic page.</h3>
                     <div class="u-form u-form-1">
                       <form  class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 0px;" source="custom" name="form">
                         <div class="u-form-group u-form-name">
@@ -378,7 +378,7 @@ $songs = array("lalala", "jodela", "i'm blue");
     </section>
 
 
-    <script class="u-script" type="text/javascript" src="{{asset('assets/js/evenements.js')}}" ></script>
+    <script class="u-script" type="text/javascript" src="{{asset('assets/js/events.js')}}" ></script>
 
 
      <!-- section 7 -->
