@@ -35,6 +35,12 @@ class myMusicController extends Controller
 
     }
 
+    public function showEventsPage(){
+
+        return view("eventsPage");
+        
+    }
+
 
     public function getSongLyrics(){
 

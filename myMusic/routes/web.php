@@ -18,6 +18,7 @@ use App\Models\Playlist;
 
 Route::get('/', [myMusicController::class, 'index']);
 Route::get('/songs', [myMusicController::class, 'showSongsPage']);
+Route::get('/events', [myMusicController::class, 'showEventsPage']);
 Route::get('/songDetail', [myMusicController::class, 'getSongLyrics']);
 
 Route::get('/loginSpotify', [loginController::class, 'loginSpotify']);

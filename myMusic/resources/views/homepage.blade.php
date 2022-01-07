@@ -95,7 +95,36 @@ $songs = array("lalala", "jodela", "i'm blue");
       </div>
     </section> -->
 
-     <!-- section 2 -->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/navigation.css')}}" />
+    <section>
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div class="introduction">
+          <h3 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1">Welcome to myMusic</h3>
+          <h4>choose what to do next:</h4>
+        </div>
+        <div class="routing-grid">
+          <div class="routing-card" onclick="navigate('/events')" style="background-image: url('/assets/images/silhouette-young-lady-crowd-during-concert_181624-27673.jpg');">
+            <h3>Music events</h3>
+            <h5>Look at events near you, in the near future <br>
+                You can also anounce your own events
+            </h5>
+          </div>
+          <div class="routing-card" onclick="navigate('/songs')" style="background-image: url('/assets/images/man-plays-drums-background-colored-lights_169016-3427.jpg');">
+            <h3>Songs and lyrics</h3>
+            <h5>Search songs and check out their lyrics. You can even
+                censor them or replace words however you like! </h5>
+          </div>
+          <div class="routing-card" onclick="navigate('/')" style="background-image: url('/assets/images/drummer-plays-drums_169016-5585.jpg');">
+            <h3>Control your mood</h3>
+            <h5>Have playlists recommended to you based on your mood and
+                favorites.
+            </h5>
+          </div>
+      </div>
+    </section>
+    
+
+     <!-- section 2 
      <section class="u-clearfix u-palette-1-base u-section-2" id="carousel_0536">
       <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
@@ -150,6 +179,7 @@ $songs = array("lalala", "jodela", "i'm blue");
         </div>
       </div>
     </section>
+-->
 
      <!-- section 3 -->
     <section class="u-align-center u-clearfix u-image u-section-3" id="sec-45f1" data-image-width="1920" data-image-height="1080">

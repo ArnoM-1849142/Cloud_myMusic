@@ -25,10 +25,10 @@ if (access_token !== null){
 }
 
 async function initializeUser(){
-    userInfo = await getSpotifyUserinfo(access_token);
+    await getSpotifyUserinfo(access_token);
     if (userInfo.error != undefined) {
         if (userInfo.error.status>299){
-            alert("login failed, please try again. Error = " + error);
+            alert("login failed, please try again. Error code = " + userInfo.error.status);
             window.location.replace("/loginSpotify");  //redirect to login
         }
     }
@@ -43,7 +43,7 @@ function setUserInfoInHeader(){
 async function getSpotifyUserinfo(access_token){ 
     //if userInfo not previously fetched, get from API
     if (userInfo === null){
-        userInfo = await fetch("https://api.spotify.com/v1/me", {
+        return userInfo = await fetch("https://api.spotify.com/v1/me", {
         method: "GET", 
         headers: {'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + access_token},
@@ -58,3 +58,6 @@ async function getSpotifyUserinfo(access_token){
     return userInfo;
 }
 
+function navigate(url){
+    window.location.replace(url);
+}

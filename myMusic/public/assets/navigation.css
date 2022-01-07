@@ -1,0 +1,66 @@
+:root{
+    --grid-vertical-margin: 20px;
+    --card-height: 400px;
+    --card-margin: 10px;
+    --card-margin-hover: 5px;
+    --card-title-margin-top: 2em;
+    --card-text-margin-horizontal: 2em;
+    --text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.411);
+    --card-hover-animation-length: 0.2s;
+}
+
+.routing-grid{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    gap: 20px;
+    width: 100%;
+    margin-top: var(--grid-vertical-margin);
+    margin-bottom: var(--grid-vertical-margin);
+}
+
+.introduction h3{
+    font-size: 3em;
+}
+
+.routing-card{
+    height: var(--card-height);
+    margin: var(--card-margin);
+    /*padding: 0;*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    filter: brightness(80%);
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px 5px rgba(0, 0, 0, 0.411);
+    /*border: 1px solid rgb(0, 0, 0);*/
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+    transition: all var(--card-hover-animation-length) ease-out;
+}
+
+.routing-card:hover{
+    margin: var(--card-margin-hover);
+    /* padding-left: 5px;
+    padding-right: 5px; */
+    box-shadow: 4px 4px 10px 6px rgba(0, 0, 0, 0.555);
+    filter: brightness(100%);
+}
+
+.routing-card h3{
+    font-size: 2em;
+    margin-top: var(--card-title-margin-top);
+    margin-left: var(--card-text-margin-horizontal);
+    margin-right: var(--card-text-margin-horizontal);
+    text-align: center;
+    text-shadow: var(--text-shadow);
+}
+
+.routing-card h5{
+    margin-top: 0;
+    margin-left: var(--card-text-margin-horizontal);
+    margin-right: var(--card-text-margin-horizontal);
+    text-align: center;
+    text-shadow: var(--text-shadow);
+}
