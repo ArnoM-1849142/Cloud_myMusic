@@ -157,7 +157,7 @@ function searchResultsCard(imageref, title, artist, addition, id){
             title: title,
             artist: artist,
           });
-        let url = "http://localhost:8000/songDetail?" + params;
+        let url = "/songDetail?" + params;
         window.location.href = url;
     };
 
