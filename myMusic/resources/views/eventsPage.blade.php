@@ -187,7 +187,7 @@ $songs = array("lalala", "jodela", "i'm blue");
 </section>
 
 
-<script class="u-script" type="text/javascript" src="{{asset('assets/js/evenements.js')}}" ></script>
+<script class="u-script" type="text/javascript" src="{{asset('assets/js/events.js')}}" ></script>
 
 
 @endsection

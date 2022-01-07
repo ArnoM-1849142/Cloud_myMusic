@@ -182,7 +182,7 @@ $songs = array("lalala", "jodela", "i'm blue");
 -->
 
      <!-- section 3 -->
-    <section class="u-align-center u-clearfix u-image u-section-3" id="sec-45f1" data-image-width="1920" data-image-height="1080">
+    <!-- <section class="u-align-center u-clearfix u-image u-section-3" id="sec-45f1" data-image-width="1920" data-image-height="1080">
       <div class="u-clearfix u-sheet u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-sheet-1">
         <div class="u-clearfix u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-gutter-0 u-layout-wrap u-layout-wrap-1">
           <div class="u-gutter-0 u-layout">
@@ -206,10 +206,10 @@ $songs = array("lalala", "jodela", "i'm blue");
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
      <!-- section 4 -->
-    <section class="u-align-left u-clearfix u-palette-1-base u-section-4" id="carousel_fc32">
+    <!-- <section class="u-align-left u-clearfix u-palette-1-base u-section-4" id="carousel_fc32">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <h2 class="u-custom-font u-font-oswald u-text u-text-default u-text-palette-3-base u-text-1"> How it works</h2>
         <div class="u-expanded-width u-list u-list-1">
@@ -240,7 +240,7 @@ $songs = array("lalala", "jodela", "i'm blue");
         </div>
         <a href="{{asset('assets/https://nicepage.com/c/text-button-html-templates')}}" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1">read more</a>
       </div>
-    </section>
+    </section> -->
 
 
      <!-- section 5 -->
@@ -271,7 +271,7 @@ $songs = array("lalala", "jodela", "i'm blue");
     <script class="u-script" type="text/javascript" src="{{asset('assets/kanyeRestApi.js')}}" ></script>
 
      <!-- section 6 -->
-    <section class="u-clearfix u-palette-1-base u-section-6" id="carousel_070c">
+    <!-- <section class="u-clearfix u-palette-1-base u-section-6" id="carousel_070c">
 
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
@@ -292,11 +292,11 @@ $songs = array("lalala", "jodela", "i'm blue");
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
 
           <!-- add event forum -->
-      <div style="z-index: 2; margin-left: auto; margin-right: auto;  display: block;" >
+      <!-- <div style="z-index: 2; margin-left: auto; margin-right: auto;  display: block;" >
         <div id="newEventform" class="u-clearfix u-sheet u-valign-middle u-sheet-1" style="z-index: 5; display: none;">
           <div class="forum-background" style="padding-block-end: 100px;">
             <div class="u-container-layout u-container-layout-1">
@@ -346,17 +346,17 @@ $songs = array("lalala", "jodela", "i'm blue");
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
     
          <!-- evenement list -->
-          <div class="u-list u-list-1" id="evenementList" style=" margin-left: auto; margin-right: auto; padding-block-start:50px; display: block;">
+          <!-- <div class="u-list u-list-1" id="evenementList" style=" margin-left: auto; margin-right: auto; padding-block-start:50px; display: block;">
             <div class="u-repeater u-repeater-1" id="evenement-repeater">
             </div>
-          </div>
+          </div> -->
 
           <!-- delete container -->
-          <div class="u-container-style u-gradient u-list-item u-repeater-item u-list-item-2">
+          <!-- <div class="u-container-style u-gradient u-list-item u-repeater-item u-list-item-2">
             <div class="u-container-layout u-similar-container u-container-layout-delete">
               <div class="u-container-style u-grey-50 u-group u-opacity u-opacity-30 u-shape-rectangle u-group-12">
                 <div class="u-container-layout u-container-layout-6"><span class="u-file-icon u-icon u-icon-circle u-text-palette-1-base u-icon-2"> <img src="{{asset('assets/images/myMusic2.png')}}" alt=""></span>
@@ -364,7 +364,7 @@ $songs = array("lalala", "jodela", "i'm blue");
                   <div class="u-border-3 u-border-grey-dark-1 u-line u-line-horizontal u-line-2"></div>
                   <p class="u-text u-text-14">To show our REST delete function, can in the box an evenement be chosen and deleted from the database</p>
                     <p></p>
-                    <select id="deleteSelector" style="width: 450px; color:gray;"> <!--onchange="slaapkamerSelect(this.options[this.selectedIndex].value)" -->
+                    <select id="deleteSelector" style="width: 450px; color:gray;"> 
                       <option  name='name' value=" choose evenement "></option>
                     </select>
                     <p></p>
@@ -372,17 +372,17 @@ $songs = array("lalala", "jodela", "i'm blue");
                 </div>
               </div>
             </div>
-          </div>
+          </div> -->
 
 
-    </section>
+    <!-- </section> -->
 
 
     <script class="u-script" type="text/javascript" src="{{asset('assets/js/events.js')}}" ></script>
 
 
      <!-- section 7 -->
-    <section class="u-align-center u-clearfix u-image u-section-7" id="carousel_40b3" data-image-width="1980" data-image-height="1114">
+    <!-- <section class="u-align-center u-clearfix u-image u-section-7" id="carousel_40b3" data-image-width="1980" data-image-height="1114">
       <div class="u-clearfix u-sheet u-valign-middle u-sheet-1">
         <div class="u-border-1 u-border-grey-25 u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-white u-group-1">
           <div class="u-container-layout u-container-layout-1">
@@ -433,7 +433,7 @@ $songs = array("lalala", "jodela", "i'm blue");
         <p class="u-text u-text-body-alt-color u-text-default u-text-3">template header
         </p>
       </div>
-    </section>
+    </section> -->
     
 
 
