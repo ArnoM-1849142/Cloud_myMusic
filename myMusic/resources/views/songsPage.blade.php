@@ -75,82 +75,30 @@
 <script class="u-script" type="text/javascript" src="{{asset('assets/soundsettings.js')}}" ></script>
 <link rel="stylesheet" type="text/css" href="{{asset('assets/soundsettings.css')}}" />
 
-<div class="u-clearfix u-sheet u-sheet-1"> 
-  <div class="song-detail-block">
-    <div class="song-info">
-      <h2 id="song">{{ $song }}</h2>
-      <h3 id="artist">{{ $artist }}</h3>
+<div class="u-clearfix u-sheet u-sheet-1">      
+    <div class="search-box">
+        <div class="text-padded" style="display: flex; width: 100%">
+            <div style="width: 50%;">
+                <div style="display: flex; flex-direction:column; width: fit-content;">
+                    <h3 class="u-text u-text-default u-text-palette-3-base u-text-8">Search a song!</h3>
+                    <div class="u-border-10 u-border-palette-3-base u-line u-line-horizontal u-line-1" style="width: auto;"></div>
+                </div>
+                <p class="u-text u-text-9">Search a song by its title. This will return a list of songs.
+                        If you click on a song you will be redirected to a lyrics page and you can censor them if needed. 
+                </p>
+            </div>
+            <div id="track-input-container">
+                <div style="width: 400px; bottom:0px; right:0px; position:absolute; margin-bottom: 20px;">
+                    <input type="text" id="trackInput" name="track" value="enter a track title" minlength="4" style="color: black; width:100%;">
+                    <button onclick="getSongsByTitle()" style="margin-bottom:0px; margin: top 10px;" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1 button">Search</button>
+                  </div>
+            </div>
+        </div>
     </div>
-    <div class="censor-block">
-      <select onchange="changeSelectedCensoring()" name="censoring option" id="censorselect" class="u-border-1 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-input u-input-rectangle u-radius-5 u-white">
-        <option value="censorall">Censor all</option>
-        <option value="censorrepl">Censor everything with your own word</option>
-        <option value="replacewrd">Replace chosen word for another</option>
-      </select>
-      <div id="textinputcontainer" style="display: none; align-items: center;">
-        <input type="text" name="inputword" value="word" id="inputword" class="wordinput">
-        <p id="toText" style="margin-left: 5px; margin-right: 5px;">To</p>
-        <input type="text" name="replacementword" value="replacement" id="replacement" class="wordinput">
-      </div>
-      <button onclick="censorText()" class="u-active-white u-border-none u-btn u-btn-round u-button-style u-hover-white u-palette-3-base u-radius-50 u-text-active-palette-1-base u-text-hover-palette-1-base u-text-palette-1-base u-btn-1 button">Censor</button>
+    <div class="search-results-grid" id="search-results-grid">
     </div>
-  </div>
-
-  <script class="u-script" type="text/javascript" src="{{asset('assets/js/lyrics.js')}}" ></script>
-  <script>
-    function changeSelectedCensoring(){
-      var censorOption = document.getElementById("censorselect").value;
-      switch (censorOption){
-        case "censorall":
-          document.getElementById("textinputcontainer").style.display = "none";
-          break;
-        case "censorrepl":
-          document.getElementById("textinputcontainer").style.display = "flex";
-          document.getElementById("toText").style.display = "none";
-          document.getElementById("replacement").style.display = "none";
-          break;
-        case "replacewrd":
-          document.getElementById("textinputcontainer").style.display = "flex";
-          document.getElementById("toText").style.display = "";
-          document.getElementById("replacement").style.display = "";
-          break;
-      }
-    }
-
-    function censorText(){
-      var censorOption = document.getElementById("censorselect").value;
-      switch (censorOption){
-        case "censorall":
-          callCensorService( document.getElementById("lyricText").innerHTML );
-          break;
-        case "censorrepl":
-          callCensorReplaceService( document.getElementById("lyricText").innerHTML,  document.getElementById("inputword").value );
-          break;
-        case "replacewrd":
-          callReplaceWordService( document.getElementById("lyricText").innerHTML, document.getElementById("inputword").value , document.getElementById("replacement").value );
-          break;
-      }
-    }
-  </script>
-
-  
-
-  <div id="lyricText">
-    {{!! nl2br(e($lyric)) !!}}
-  </div> 
-  <script>
-    function removeCurlyBrackets(text){
-      return text.replace(/[{()}]/g, '');
-    }
-    
-    let text = document.getElementById("lyricText");
-    text.innerHTML = removeCurlyBrackets(text.innerHTML);
-  </script>    
 </div>
 
 
 
 @endsection
-
-
-

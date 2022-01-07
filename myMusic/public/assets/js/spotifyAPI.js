@@ -152,6 +152,14 @@ function searchResultsCard(imageref, title, artist, addition, id){
     let card = document.createElement("div");
     card.classList.add("search-results-card");
     card.id = id;
+    card.onclick = function(){
+        const params = new URLSearchParams({
+            title: title,
+            artist: artist,
+          });
+        let url = "http://localhost:8000/songDetail?" + params;
+        window.location.href = url;
+    };
 
     let img = document.createElement("img");
     img.src = imageref;
